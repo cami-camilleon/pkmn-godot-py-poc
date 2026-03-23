@@ -4,9 +4,12 @@ class Character:
     # -------------------------------------------------------------------------------------------------------------
     # ATTRIBUTES - ATTRIBUTES - ATTRIBUTES - ATTRIBUTES - ATTRIBUTES - ATTRIBUTES - ATTRIBUTES - ATTRIBUTES - ATTRI
 
+    # player's Character.id will be 0, any id above 0 will be an NPC.
+    id = -1
+
     # who is the character
     name = "Jane"
-    nickname = "Janie Doe"
+    nickname = "Janie"
     gender = ["she", "her", "hers"]
     # subject, object, possessive, reflexive pronouns
     # masculine default:   he,  him,   his,  himself
@@ -80,8 +83,8 @@ class Character:
         # romantic relationships:
         "into": [],
         "romantic": [], 
-        "exromantic": [], 
         "serious": [], 
+        "exromantic": [], 
         "exserious": [] 
         # ^ loose analogue to marriage, as traditional marriage will not be forced
         # polyromance will also be supported
@@ -165,13 +168,13 @@ class Character:
                             if update < -50:
                                 # i fucking hate you
                                 self.contacts[key].remove(contact)
-                                self.contacts["hates"].append((character, DEFAULT_FRIENDSHIP))
+                                self.contacts["hates"].append((character, 5))
                                 return "hates"
                             elif update != -26:
                                 print(update)
                                 # i dont like you...
                                 self.contacts[key].remove(contact)
-                                self.contacts["dislikes"].append((character, DEFAULT_FRIENDSHIP))
+                                self.contacts["dislikes"].append((character, 5))
                                 return "dislikes"
                             else: 
                                 # should be exactly -26
@@ -223,6 +226,11 @@ class Character:
                                 self.contacts[key].remove(contact)
                                 self.contacts["knows"].append((character, 5))
                                 return "knows"
+                            elif key == "dislikes":
+                                # wow i fucking haaaaate you...
+                                self.contacts[key].remove(contact)
+                                self.contacts["hates"].append((character, 5))
+                                return "hates"
                             else:
                                 # likewise, the final else case is just making sure the value doesnt go below zero.
                                 self.contacts[key].remove(contact)

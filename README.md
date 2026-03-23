@@ -1,11 +1,11 @@
-# NPC Dialogue Overview
+# NPC Dialogue Concepts & Overview
 
-This document will go over how NPC dialogue works.  
+This document will go over how NPC dialogue and relationships should work.  
 This code and these concepts will be open and available for anyone to use - just like... credit me pls n thx :3
 
 ## Initial Interaction
 
-When first meeting an NPC, their opinion of you will likely be nothing. They may have heard of you if you have a local reputation and the NPC is more inclined to gossip, but by default they will not know you, naturally. This will be reflected in the code by all of their player relationship variables set to zero. They will have an introduction that will be largely based on their personality ([see also](#npc-dialogue-in-altering-players-personality)). *(Examples will reference Personalities from my Pokémon fan-project* [Pokémon GODOT](#initial-interaction))
+When first meeting an NPC, their opinion of you will likely be nothing. They may have heard of you if you have a local reputation and the NPC is more inclined to gossip, but by default they will not know you, naturally. This will be reflected in the code by all of their player relationship variables set to zero. They will have an introduction that will be largely based on their personality ([see also](#npc-dialogue-in-altering-players-personality)). *(Examples will reference Personalities from my Pokémon fan-project* [Pokémon GODOT](https://github.com/cami-camilleon))
 
 **Examples:**  
 
