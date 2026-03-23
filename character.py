@@ -1,3 +1,5 @@
+from indexes import regiontowns
+
 class Character:
     # this will be the base class that both the player character and all NPCs inherit from
 
@@ -102,6 +104,9 @@ class Character:
         self.town = town.lower()
         pass
 
+    def write_char_to_file(self):
+        with open("characters.txt", "a") as f:
+            f.write("testing!!!")
 
     def update_relationship(self, character, update):
         """Update the relationship value for a character.
