@@ -1,4 +1,4 @@
-from indexes import regiontowns
+from indexes import regiontowns, natures, personalities
 
 class Character:
     # this will be the base class that both the player character and all NPCs inherit from
@@ -12,26 +12,31 @@ class Character:
     # WHO IS THE CHARACTER
     name = "Jane"
     nickname = "Janie"
-    gender = ["they", "them", "their"]
+    pronouns = ["they", "them", "their", "theirs", "are", ""]
     # ^ FUCKING PRONOUNS!!! 
-    # subject, object, possessive, reflexive pronouns
-    # masculine default:   he,  him,   his,  himself
-    #  feminine default:  she,  her,  hers,  herself
-    #   neutral default: they, them, their, themself
-    # inanimate default:   it,   it,   its,   itself
-    # in the case of all of the default pronoun sets, the reflexive form is just the possessive form + self 
-    # choosing custom neopronouns will be an option, and an option to fill in a custom reflexive form will also 
-    #   be supported, to provide support for the case that a neopronoun set doesnt follow the default pronoun 
-    #   grammar pattern. 
-    nature = 0
+    # "They are* funny!", "Go talk to them", "Their name is _", "That is theirs"
+    # masculine default:   he,  him,   his,    his
+    #  feminine default:  she,  her,   her,   hers
+    #   neutral default: they, them, their, theirs
+    # inanimate default:   it,   it,   its,    its (grammar changes if this is the case...)
+    # *"is" changes to "are" when using gender neutral pronouns
+    # the usual case would look like this:
+    # "He is funny!", "She is sad", "It is hungry", "They are different!"
+    # ** special grammar: 
+    #   * the last entry in the list is either "s" or "": this value will get put after verbs that follow pronouns
+    #   example: She lives over there. (an "s" is put after "lives"); They live over here. ("" is put after "live")
+    #   * the second to last entry in the pronoun list is "are" or "is"
+    #   ^^^^ more code and rules will be added as more grammatical variances need to be implimented...
+
+    natureid = 0
     # ^ references the natures list in indexes.py
 
 
     # WHERE IS THE CHARACTER FROM
-    region = 0
-    town = 0
+    regionid = 0
+    townid = 0
     # ^ references the regiontowns dict in indexes.py
-    address = 0
+    addressid = 0
     # ^ all housings in a city will be indexed starting at 1; 0 will be homeless
 
 
@@ -107,10 +112,52 @@ class Character:
     # ------------------------------------------------------------------------------------------------------------
     # METHODS - METHODS - METHODS - METHODS - METHODS - METHODS - METHODS - METHODS - METHODS - METHODS - METHODS 
 
-    def __init__(self, name, town):
-        self.name = name.lower()
-        self.town = town.lower()
-        pass
+    def __init__(self, id=0):
+        # constructor will fill in data for self from "characters.txt" **UNLESS THEY HAVE TO DO WITH OTHER 
+        # CHARACTERS (chiefly the contacts dictionary)
+
+        f = open("characters.txt").read().split("\n")
+        
+        character = ""
+        for item in f:
+            if item.startswith(str(id)):
+                character = item
+                break
+
+        if character == "":
+            return
+        
+        # start making the character
+        self.id = id
+
+        character = character.split(' ')
+
+        self.name = character[1]
+        self.nickname = character[2].replace(r"\_", " ")
+        self.pronouns = character[3].split(",")
+        self.natureid = int(character[4])
+
+        self.regionid = int(character[5])
+        self.townid = int(character[6])
+        self.addressid = int(character[7])
+        
+        # populate interests dictionary
+        # DEBUG NOTE: all categories are not yet indexed, once they are indexed and begin being populated with items,
+        # we will use the ID taken from the file as the id of the thing to be placed in the dictionary, rather than 
+        # putting the id in the dictionary itself 
+        for i, listnum in enumerate([8, 9, 10, 11, 12]):
+            for j, cluster in enumerate(character[listnum].split(".")):
+                for interest in cluster.split(","):
+                    categorykey = [*self.interests.keys()][i]
+                    opinionkey = [*self.interests[categorykey].keys()][j]
+                    if interest:
+                        # again, this is only appending the id of the thingy to the dictionary values.
+                        # later, we will use the id to append an actual item object reference.
+                        self.interests[categorykey][opinionkey].append(int(interest))
+            
+        
+        # populate contacts dictionary
+        # this one is tricky because um... all the contacts need to exist first.... umm
 
     def write_char_to_file(self):
         with open("characters.txt", "a") as f:
@@ -304,3 +351,43 @@ class Character:
                 break
 
         return result or "indifferent"
+    
+    # here's some methods that return the text equivalent to things that are stored in the character as ids
+
+    def nature(self):
+        return natures[self.natureid] 
+    
+    def personality(self):
+        for cat in personalities.keys():
+            if self.natureid in personalities[cat]:
+                return cat
+        pass
+
+    def region(self):
+        return [*regiontowns.keys()][self.regionid]
+
+    def town(self, form):
+        """
+        :param form: str - either "long" or "short", "long" meaning the town is returned with the 
+        trailing "-town" or "-city" and "short" meaning without.
+        """
+        town = regiontowns[self.region()][self.townid]
+        match form:
+            case "short":
+                townsplit = town.split(' ')
+                repair = []
+
+                for word in townsplit:
+                    if word not in ["town", "city"]:
+                        repair.append(word)
+                
+                return " ".join(repair)
+            case "long":
+                return town
+        
+        pass
+
+    def address(self):
+        return self.addressid
+
+    

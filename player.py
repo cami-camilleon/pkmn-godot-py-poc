@@ -11,7 +11,3 @@ class Player(Character):
     # ------------------------------------------------------------------------------------------------------------
     # METHODS - METHODS - METHODS - METHODS - METHODS - METHODS - METHODS - METHODS - METHODS - METHODS - METHODS 
 
-    def __init__(self, name, town):
-        Character.__init__(self, name, town)
-
-    pass

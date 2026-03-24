@@ -1,0 +1,21 @@
+a character will be written into one line like this:
+id: int
+name: string
+nickname: string
+pronouns, each separated by comma: strings
+nature id: int
+region id: int
+town id: int
+address id: int
+interests: items (each category (like, love, dislike, hate) is separated by periods and each list between the periods 
+    has items separated by commas)
+    (values will be item ids)
+interests: pokemon
+interests: cities
+interests: colors
+interests: flavors
+contacts (each contact key (knows, friends, etc.) is separated by periods and each list of between the periods has items 
+    separated by commas)
+    (values will be character id HYPHEN friendship score)
+
+0 Camille Cami she,her,hers 0 5 1 1 13,50,40,34.30,21,32.65,104,98.22 ... ... ... ... .........
