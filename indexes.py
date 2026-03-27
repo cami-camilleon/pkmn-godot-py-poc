@@ -1,4 +1,9 @@
 # ----------------------------------------------------------------------------------------------------------------
+# CHARACTER LIST - CHARACTER LIST - CHARACTER LIST - CHARACTER LIST - CHARACTER LIST - CHARACTER LIST - CHARACTER   
+
+charlist = []
+
+# ----------------------------------------------------------------------------------------------------------------
 # NATURES - PERSONALITIES - NATURES - PERSONALITIES - NATURES - PERSONALITIES - NATURES - PERSONALITIES - NATURES 
 
 # each nature will have different responses and dialogue options

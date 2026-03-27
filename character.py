@@ -1,4 +1,4 @@
-from indexes import regiontowns, natures, personalities
+from indexes import charlist, regiontowns, natures, personalities
 
 class Character:
     # this will be the base class that both the player character and all NPCs inherit from
@@ -40,74 +40,6 @@ class Character:
     # ^ all housings in a city will be indexed starting at 1; 0 will be homeless
 
 
-    # WHAT DOES THE CHARACTER LIKE/LOVE/DISLIKE/HATE
-    # categories: items, pokemon, cities, colors, flavors/scents
-    interests = {
-        "items": {
-            "hates": [],
-            "dislikes": [],
-            "likes": [],
-            "loves": []
-        },
-        "pokemon": {
-            "hates": [],
-            "dislikes": [],
-            "likes": [],
-            "loves": []
-        },
-        "cities": {
-            "hates": [],
-            "dislikes": [],
-            "likes": [],
-            "loves": []
-        },
-        "colors": {
-            "hates": [],
-            "dislikes": [],
-            "likes": [],
-            "loves": []
-        },
-        "flavors": {
-            "hates": [],
-            "dislikes": [],
-            "likes": [],
-            "loves": []
-        }
-    }
-    # in the case of npcs, this is of course vital information to have in order to control the reaction of said npc 
-    # when talking about or recieving something they hate or love.
-    # knowing what the player character does or doesnt like will come in handy when influencing what npcs talk to you
-    # about or give you as a gift. perhaps the game can keep track of things that you buy as items that you like that 
-    # npcs who know and like you should be inclined to gift you, and maybe you can have a wishlist of things you want 
-    # to buy that close friends can somehow 'sense' and have a chance to gift you. this will increase the engagement 
-    # and personal feeling you can build with the characters. 
-
-
-    # WHO DOES THE CHARACTER KNOW
-    # each value in the dict is an array of tuples
-    # each tuple will include a reference to a Character (player or other humann npc) and their friendship level as
-    # an int
-    contacts = {
-        # platonic relationships:
-        "knows": [], 
-        "friends": [], 
-        "bestfriends": [], 
-        "dislikes": [], 
-        "hates": [], 
-
-        # romantic relationships:
-        "into": [],
-        "romantic": [], 
-        "serious": [], 
-        "exromantic": [], 
-        "exserious": [] 
-        # ^ loose analogue to marriage, as traditional marriage will not be forced
-        # polyromance will also be supported
-        # NOTE: 'exromantic' and 'exserious' will only be lists of Characters, and not lists of tuples with a Character
-        # and int like the rest of them. this would cause issues with methods that parse through every key in the 
-        # contacts dict so REMEMBER TO SKIP THOSE TWO KEYS WHEN PARSING THROUGH CONTACTS!!!! 
-        # examples of this necessary key-skipping are in update_relationship and audit_contact 
-    }
 
     # ------------------------------------------------------------------------------------------------------------
     # METHODS - METHODS - METHODS - METHODS - METHODS - METHODS - METHODS - METHODS - METHODS - METHODS - METHODS 
@@ -115,6 +47,75 @@ class Character:
     def __init__(self, id=0):
         # constructor will fill in data for self from "characters.txt" **UNLESS THEY HAVE TO DO WITH OTHER 
         # CHARACTERS (chiefly the contacts dictionary)
+
+        # WHAT DOES THE CHARACTER LIKE/LOVE/DISLIKE/HATE
+        # categories: items, pokemon, cities, colors, flavors/scents
+        self.interests = {
+            "items": {
+                "hates": [],
+                "dislikes": [],
+                "likes": [],
+                "loves": []
+            },
+            "pokemon": {
+                "hates": [],
+                "dislikes": [],
+                "likes": [],
+                "loves": []
+            },
+            "cities": {
+                "hates": [],
+                "dislikes": [],
+                "likes": [],
+                "loves": []
+            },
+            "colors": {
+                "hates": [],
+                "dislikes": [],
+                "likes": [],
+                "loves": []
+            },
+            "flavors": {
+                "hates": [],
+                "dislikes": [],
+                "likes": [],
+                "loves": []
+            }
+        }
+        # in the case of npcs, this is of course vital information to have in order to control the reaction of said npc 
+        # when talking about or recieving something they hate or love.
+        # knowing what the player character does or doesnt like will come in handy when influencing what npcs talk to you
+        # about or give you as a gift. perhaps the game can keep track of things that you buy as items that you like that 
+        # npcs who know and like you should be inclined to gift you, and maybe you can have a wishlist of things you want 
+        # to buy that close friends can somehow 'sense' and have a chance to gift you. this will increase the engagement 
+        # and personal feeling you can build with the characters. 
+
+
+        # WHO DOES THE CHARACTER KNOW
+        # each value in the dict is an array of tuples
+        # each tuple will include a reference to a Character (player or other humann npc) and their friendship level as
+        # an int
+        self.contacts = {
+            # platonic relationships:
+            "knows": [], 
+            "friends": [], 
+            "bestfriends": [], 
+            "dislikes": [], 
+            "hates": [], 
+
+            # romantic relationships:
+            "into": [],
+            "romantic": [], 
+            "serious": [], 
+            "exromantic": [], 
+            "exserious": [] 
+            # ^ loose analogue to marriage, as traditional marriage will not be forced
+            # polyromance will also be supported
+            # NOTE: 'exromantic' and 'exserious' will only be lists of Characters, and not lists of tuples with a Character
+            # and int like the rest of them. this would cause issues with methods that parse through every key in the 
+            # contacts dict so REMEMBER TO SKIP THOSE TWO KEYS WHEN PARSING THROUGH CONTACTS!!!! 
+            # examples of this necessary key-skipping are in update_relationship and audit_contact 
+        }
 
         f = open("characters.txt").read().split("\n")
         
@@ -153,15 +154,22 @@ class Character:
                     if interest:
                         # again, this is only appending the id of the thingy to the dictionary values.
                         # later, we will use the id to append an actual item object reference.
-                        self.interests[categorykey][opinionkey].append(int(interest))
-            
-        
-        # populate contacts dictionary
-        # this one is tricky because um... all the contacts need to exist first.... umm
+                        self.interests[categorykey][opinionkey].extend([int(interest)])
 
-    def write_char_to_file(self):
-        with open("characters.txt", "a") as f:
-            f.write("testing!!!")
+        # now populate contacts dictionary
+        # we will be putting tuples containing (Character.id, friendscore) and then when the contact needs to be 
+        # referenced we will use the integer id to lookup the character in the table 
+        for char in open("characters.txt").read().split("\n"):
+            if int(char[0]) == self.id:
+                contacts = char.split(' ')[13]
+                for i, category in enumerate(contacts.split(".")):
+                    for entry in category.split(","):
+                        if entry:
+                            #print(f"Before Append - {charlist[int(char[0])].name} {[*charlist[0].contacts.keys()][i]} contacts list: {charlist[int(char[0])].contacts[[*charlist[0].contacts.keys()][i]]}")
+                            self.contacts[[*self.contacts.keys()][i]].append((int(entry.split("-")[0]), int(entry.split("-")[1])))
+                            #print(f"AFTER Append - {charlist[int(char[0])].name} {[*charlist[0].contacts.keys()][i]} contacts list: {charlist[int(char[0])].contacts[[*charlist[0].contacts.keys()][i]]}\n")
+        
+        charlist.append(self)
 
     def update_relationship(self, character, update):
         """Update the relationship value for a character.
