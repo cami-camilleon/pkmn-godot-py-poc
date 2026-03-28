@@ -1,4 +1,4 @@
-from indexes import charlist, regiontowns, natures, personalities
+from data.indexes import charlist, regiontowns, natures, personalities
 
 class Character:
     # ------------------------------------------------------------------------------------------------------------
@@ -80,7 +80,7 @@ class Character:
         }
 
         # begin read from file:
-        f = open("characters.txt").read().split("\n")
+        f = open("data/characters.txt").read().split("\n")
         
         character = ""
         for item in f:
@@ -136,7 +136,7 @@ class Character:
         # now populate contacts dictionary
         # we will be putting tuples containing (Character.id, friendscore) and then when the contact needs to be 
         # referenced we will use the integer id to lookup the character in the table 
-        for char in open("characters.txt").read().split("\n"):
+        for char in open("data/characters.txt").read().split("\n"):
             if int(char[0]) == self.id:
                 contacts = char.split(' ')[13]
                 for i, category in enumerate(contacts.split(".")):

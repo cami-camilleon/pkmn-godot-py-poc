@@ -1,14 +1,14 @@
 # imported classes
-from player import Player
-from npc import NPC
+from classes.player import Player
+from classes.npc import NPC
 # imported functions
 
 # imported datastructures, variables
-from indexes import charlist
+from data.indexes import charlist
 
 # create character list from characters.txt
 def charlist_read():
-    f = open("characters.txt").read().split("\n")
+    f = open("data/characters.txt").read().split("\n")
     for i in range(0, len(f)):
         match i:
             case 0:
@@ -20,7 +20,7 @@ def charlist_read():
 # write the current charlist to characters.txt
 # warning: this WILL overwrite the old charlist current charlist - shouldnt be that crazy insecure but yea
 def charlist_write():
-    with open("characters.txt", "w") as f:
+    with open("data/characters.txt", "w") as f:
         f.write("testing!!!")
     pass
 
@@ -66,6 +66,5 @@ def charlist_debug():
                         case "exserious":
                             print(f"- {char.name.title()} used to be seriously romantic with {charlist[entry].name.title()}!!")
         print("\n")
-# charlist_debug()
+charlist_debug()
 
-print(charlist)

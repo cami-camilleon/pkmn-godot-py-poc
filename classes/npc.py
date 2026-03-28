@@ -1,4 +1,4 @@
-from character import Character
+from classes.character import Character
 
 class NPC(Character):
     # this is the class specifically for human NPCs, inheriting from the parent Character class.

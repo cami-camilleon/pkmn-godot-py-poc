@@ -178,3 +178,8 @@ regiontowns = {
 
 # idk what items are gonna look like yet tbh 
 # im thinking itll probably just be a list of item guys? probably ...
+
+items = [
+    #pokeballs
+    
+]
