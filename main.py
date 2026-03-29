@@ -7,7 +7,4 @@ from data.data import charlist, pokedex
 
 # da code
 
-"""charlist_read()
-charlist_debug()"""
-
 

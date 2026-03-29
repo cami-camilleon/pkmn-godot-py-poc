@@ -1,6 +1,4 @@
 # imported classes
-from classes.item import Item
-from classes.pokemon import Pokemon
 
 # ----------------------------------------------------------------------------------------------------------------
 # CHARACTER LIST - CHARACTER LIST - CHARACTER LIST - CHARACTER LIST - CHARACTER LIST - CHARACTER LIST - CHARACTER   
@@ -183,33 +181,152 @@ regiontowns = {
 # idk what items are gonna look like yet tbh 
 # im thinking itll probably just be a list of item guys? probably ...
 
-items = [
+items = {
     #pokeballs
-    
-]
+    "cherish ball": {
+        "category": "pokeballs",
+        "description": "A very hard to find collector's Poké-ball. They are usually passed around by those in very high economic circles in auctions and government diplomacy.",
+        "price": 0,
+    },
+	"designer ball": {
+		"category": "pokeballs",
+        "description": "A custom-ordered Poké-ball with a unique design."
+	},
+    "dive ball": {
+        "category": "pokeballs",
+        "description": "A type of Poké-ball with algorithms designed for Pokémon who live in the water. Thus, it is most effective while surfing or fishing.",
+        "price": 0,
+    },
+    "dream ball": {
+        "category": "pokeballs",
+        "description": "A type of Poké-ball with algorithms specially designed to work on Pokémon who are drowsy or sleeping.",
+        "price": 0,
+    },
+    "dusk ball": {
+        "category": "pokeballs",
+        "description": "A type of Poké-ball with algorithms specially designed to work in the dark. It is most effective if used in caves or at night.",
+        "price": 0,
+    },
+    "fast ball": {
+        "category": "pokeballs",
+        "description": "A type of Poké-ball with algorithms specially designed for Pokémon who are very fast.",
+        "price": 0,
+    },
+    "great ball": {
+        "category": "pokeballs",
+        "description": "A more effective Poké-ball proven to work somewhat better at catching Pokémon than a standard one.",
+        "price": 0,
+    },
+    "heal ball": {
+        "category": "pokeballs",
+        "description": "A type of Poké-ball designed with Pokémon healing technology, totally restoring Pokémon to full health when captured.",
+        "price": 0,
+    },
+    "heavy ball": {
+        "category": "pokeballs",
+        "description": "A type of Poké-ball with algorithms designed to be especially good at catching heavy Pokémon.",
+        "price": 0,
+    },
+    "lure ball": {
+        "category": "pokeballs",
+        "description": "A type of Poké-ball designed to be used while fishing. It seems especially effective at catching Pokémon living in the water.",
+        "price": 0,
+    },
+    "luxury ball": {
+        "category": "pokeballs",
+        "description": "A type of Poké-ball designed to be extra comfortable to the Pokémon living inside. Pokémon inside become seem to be more friendly with their trainers than those in regular Poké-balls.",
+        "price": 0,
+    },
+    "master ball": {
+        "category": "pokeballs",
+        "description": "An extremely expensive Poké-ball seemingly irresistable to Pokémon. It will not fail to capture one.",
+        "price": 0,
+    },
+    "moon ball": {
+        "category": "pokeballs",
+        "description": "A type Poké-ball with algorithms developed from studying Moon Stones. Pokémon who respond to those stones might be more inclined to live in one.",
+        "price": 0,
+    },
+    "net ball": {
+        "category": "A type of Poké-ball with algorithms specially designed for capturing Water or Bug type Pokémon.",
+        "description": "",
+        "price": 0,
+    },
+    "park ball": {
+        "category": "pokeballs",
+        "description": "A special yellow-colored Poké-ball usually rented out in Pokémon parks.",
+        "price": 0,
+    },
+    "poké-ball": {
+        "category": "pokeballs",
+        "description": "A special device for storing Pokémon: they are harmlessly turned into data and biological energy and reduced to a fraction of their original size.",
+        "price": 0,
+    },
+    "premier ball": {
+        "category": "pokeballs",
+        "description": "A special white-colored Poké-ball. This type of ball culturally tends to represent a special occasion.",
+        "price": 0,
+    },
+    "quick ball": {
+        "category": "pokeballs",
+        "description": "A Poké-ball most effective when used on a Pokémon right away, catching them off guard (pun intended).",
+        "price": 0,
+    },
+    "repeat ball": {
+        "category": "pokeballs",
+        "description": "A Poké-ball that syncs to your Pokédex app and uses data found there to make it easier to catch Pokémon you have already caught.",
+        "price": 0,
+    },
+    "safari ball": {
+        "category": "pokeballs",
+        "description": "A regular Poké-ball with a green camo printed top, just for fun :)",
+        "price": 0,
+    },
+    "timer ball": {
+        "category": "pokeballs",
+        "description": "A Poké-ball that charges over time, becoming more effective the longer the timer is running.",
+        "price": 0,
+    },
+    "ultra ball": {
+        "category": "pokeballs",
+        "description": "A super effective Poké-ball proven to work significantly better at catching Pokémon than a standard one.",
+        "price": 0,
+    }
+}
 
 # ----------------------------------------------------------------------------------------------------------------
 # POKEMON - POKEMON - POKEMON - POKEMON - POKEMON - POKEMON - POKEMON - POKEMON - POKEMON - POKEMON - POKEMON - PO
 
-# total monster of a list... ready?
-# thinking this might ALSO just be a list of pokemon objects, at least for now...
-# also FUCK i just realized i have to port all my microsoft shit to non microsoft shit FUCK
+# total (pocket) monster of a list... ready?
 
 pokedex = {
     "abra": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -218,17 +335,30 @@ pokedex = {
     "kadabra": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -237,17 +367,30 @@ pokedex = {
     "alakazam": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -257,17 +400,30 @@ pokedex = {
     "forgi": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -276,17 +432,30 @@ pokedex = {
     "absol": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -296,17 +465,30 @@ pokedex = {
     "aipom": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -315,17 +497,30 @@ pokedex = {
     "ambipom": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -335,17 +530,30 @@ pokedex = {
     "alomomola": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -355,17 +563,30 @@ pokedex = {
     "applin": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -374,17 +595,30 @@ pokedex = {
     "flapple": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -393,17 +627,30 @@ pokedex = {
     "appletun": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -412,17 +659,30 @@ pokedex = {
     "dipplin": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -431,17 +691,30 @@ pokedex = {
     "hydrapple": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -451,17 +724,30 @@ pokedex = {
     "aron": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -470,17 +756,30 @@ pokedex = {
     "lairon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -489,17 +788,30 @@ pokedex = {
     "aggron": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -509,17 +821,30 @@ pokedex = {
     "arrokuda": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -528,17 +853,30 @@ pokedex = {
     "barraskewda": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -548,17 +886,30 @@ pokedex = {
     "audino": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -568,17 +919,30 @@ pokedex = {
     "axew": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -587,17 +951,30 @@ pokedex = {
     "fraxure": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -606,17 +983,30 @@ pokedex = {
     "haxorus": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -626,17 +1016,30 @@ pokedex = {
     "azurill": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -645,17 +1048,30 @@ pokedex = {
     "marill": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -664,17 +1080,30 @@ pokedex = {
     "azumarill": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -684,17 +1113,30 @@ pokedex = {
     "bagon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -703,17 +1145,30 @@ pokedex = {
     "shelgon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -722,17 +1177,30 @@ pokedex = {
     "salamence": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -742,17 +1210,30 @@ pokedex = {
     "baltoy": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -761,17 +1242,30 @@ pokedex = {
     "claydol": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -781,17 +1275,30 @@ pokedex = {
     "barboach": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -800,17 +1307,30 @@ pokedex = {
     "muddeel": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -819,17 +1339,30 @@ pokedex = {
     "whiscash": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -839,17 +1372,30 @@ pokedex = {
     "basculin": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -859,17 +1405,30 @@ pokedex = {
     "beldum": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -878,17 +1437,30 @@ pokedex = {
     "metang": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -897,17 +1469,30 @@ pokedex = {
     "metagross": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -917,17 +1502,30 @@ pokedex = {
     "bellsprout": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -936,17 +1534,30 @@ pokedex = {
     "weepinbell": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -955,17 +1566,30 @@ pokedex = {
     "victreebel": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -975,17 +1599,30 @@ pokedex = {
     "bergmite": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -994,17 +1631,30 @@ pokedex = {
     "avalugg": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1014,17 +1664,30 @@ pokedex = {
     "bidoof": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1033,17 +1696,30 @@ pokedex = {
     "bibarel": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1053,17 +1729,30 @@ pokedex = {
     "binacle": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1072,17 +1761,30 @@ pokedex = {
     "barnaquad": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1091,17 +1793,30 @@ pokedex = {
     "barbaracle": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1111,17 +1826,30 @@ pokedex = {
     "blipbug": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1130,17 +1858,30 @@ pokedex = {
     "dottler": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1149,17 +1890,30 @@ pokedex = {
     "orbeetle": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1169,17 +1923,30 @@ pokedex = {
     "blitzle": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1188,17 +1955,30 @@ pokedex = {
     "zebstrika": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1208,17 +1988,30 @@ pokedex = {
     "bombirdier": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1228,17 +2021,30 @@ pokedex = {
     "bonsly": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1247,17 +2053,30 @@ pokedex = {
     "sudowoodo": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1266,17 +2085,30 @@ pokedex = {
     "trickamoor": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1286,17 +2118,30 @@ pokedex = {
     "bouffalant": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1306,17 +2151,30 @@ pokedex = {
     "bounsweet": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1325,17 +2183,30 @@ pokedex = {
     "steenee": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1344,17 +2215,30 @@ pokedex = {
     "tsareena": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1364,17 +2248,30 @@ pokedex = {
     "bramblin": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1383,17 +2280,30 @@ pokedex = {
     "brambleghast": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1403,17 +2313,30 @@ pokedex = {
     "bronzor": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1422,17 +2345,30 @@ pokedex = {
     "bronztle": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1441,17 +2377,30 @@ pokedex = {
     "bronzong": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1461,17 +2410,30 @@ pokedex = {
     "bruxish": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1481,17 +2443,30 @@ pokedex = {
     "budew": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1500,17 +2475,30 @@ pokedex = {
     "roselia": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1519,17 +2507,30 @@ pokedex = {
     "roserade": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1539,17 +2540,30 @@ pokedex = {
     "puppabuoy": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1558,17 +2572,30 @@ pokedex = {
     "buizel": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1577,17 +2604,30 @@ pokedex = {
     "floatzel": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1597,17 +2637,30 @@ pokedex = {
     "bulbasaur": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1616,17 +2669,30 @@ pokedex = {
     "ivysaur": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1635,17 +2701,30 @@ pokedex = {
     "venusaur": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1655,17 +2734,30 @@ pokedex = {
     "buneary": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1674,17 +2766,30 @@ pokedex = {
     "lopunny": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1694,17 +2799,30 @@ pokedex = {
     "bunnelby": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1713,17 +2831,30 @@ pokedex = {
     "diggersby": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1733,17 +2864,30 @@ pokedex = {
     "burmy": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1752,17 +2896,30 @@ pokedex = {
     "mothim": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1771,17 +2928,30 @@ pokedex = {
     "wormadam": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1791,17 +2961,30 @@ pokedex = {
     "cactoid": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1810,17 +2993,30 @@ pokedex = {
     "cacnea": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1829,17 +3025,30 @@ pokedex = {
     "cacturne": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1849,17 +3058,30 @@ pokedex = {
     "capsakid": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1868,17 +3090,30 @@ pokedex = {
     "scovillain": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1888,17 +3123,30 @@ pokedex = {
     "carbink": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1908,17 +3156,30 @@ pokedex = {
     "carnivine": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1928,17 +3189,30 @@ pokedex = {
     "carvanha": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1947,17 +3221,30 @@ pokedex = {
     "sharpedo": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1967,17 +3254,30 @@ pokedex = {
     "castform": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -1987,17 +3287,30 @@ pokedex = {
     "caterpie": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2006,17 +3319,30 @@ pokedex = {
     "metapod": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2025,17 +3351,30 @@ pokedex = {
     "butterfree": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2045,17 +3384,30 @@ pokedex = {
     "cetoddle": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2064,17 +3416,30 @@ pokedex = {
     "cetitan": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2084,17 +3449,30 @@ pokedex = {
     "charcadet": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2103,17 +3481,30 @@ pokedex = {
     "armarouge": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2122,17 +3513,30 @@ pokedex = {
     "ceruledge": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2142,17 +3546,30 @@ pokedex = {
     "charmander": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2161,17 +3578,30 @@ pokedex = {
     "charmeleon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2180,17 +3610,30 @@ pokedex = {
     "charizard": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2200,17 +3643,30 @@ pokedex = {
     "chatot": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2220,17 +3676,30 @@ pokedex = {
     "cherubi": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2239,17 +3708,30 @@ pokedex = {
     "cherrim": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2258,17 +3740,30 @@ pokedex = {
     "solarubi": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2278,17 +3773,30 @@ pokedex = {
     "chespin": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2297,17 +3805,30 @@ pokedex = {
     "quilladin": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2316,17 +3837,30 @@ pokedex = {
     "chesnaught": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2336,17 +3870,30 @@ pokedex = {
     "chewtle": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2355,17 +3902,30 @@ pokedex = {
     "snappnaw": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2374,17 +3934,30 @@ pokedex = {
     "drednaw": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2394,17 +3967,30 @@ pokedex = {
     "chikorita": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2413,17 +3999,30 @@ pokedex = {
     "bayleef": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2432,17 +4031,30 @@ pokedex = {
     "meganium": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2452,17 +4064,30 @@ pokedex = {
     "chimchar": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2471,17 +4096,30 @@ pokedex = {
     "monferno": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2490,17 +4128,30 @@ pokedex = {
     "infernape": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2510,17 +4161,30 @@ pokedex = {
     "chingling": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2529,17 +4193,30 @@ pokedex = {
     "chimecho": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2549,17 +4226,30 @@ pokedex = {
     "chinchou": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2568,17 +4258,30 @@ pokedex = {
     "lanturn": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2588,17 +4291,30 @@ pokedex = {
     "clamperl": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2607,17 +4323,30 @@ pokedex = {
     "huntail": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2626,17 +4355,30 @@ pokedex = {
     "gorebyss": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2646,17 +4388,30 @@ pokedex = {
     "clauncher": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2665,17 +4420,30 @@ pokedex = {
     "clabuchet": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2684,17 +4452,30 @@ pokedex = {
     "clawitzer": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2704,17 +4485,30 @@ pokedex = {
     "cleffa": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2723,17 +4517,30 @@ pokedex = {
     "clefairy": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2742,17 +4549,30 @@ pokedex = {
     "clefable": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2762,17 +4582,30 @@ pokedex = {
     "clobbopus": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2781,17 +4614,30 @@ pokedex = {
     "grapploct": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2801,17 +4647,30 @@ pokedex = {
     "combee": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2820,17 +4679,30 @@ pokedex = {
     "drombee": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2839,17 +4711,30 @@ pokedex = {
     "combihive": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2858,17 +4743,30 @@ pokedex = {
     "vespiquen": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2878,17 +4776,30 @@ pokedex = {
     "comfey": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2898,17 +4809,30 @@ pokedex = {
     "corphish": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2917,17 +4841,30 @@ pokedex = {
     "crawdaunt": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2937,17 +4874,30 @@ pokedex = {
     "corsola": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2956,17 +4906,30 @@ pokedex = {
     "cursola": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2976,17 +4939,30 @@ pokedex = {
     "cottonee": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -2995,17 +4971,30 @@ pokedex = {
     "whimsicott": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3015,17 +5004,30 @@ pokedex = {
     "crabrawler": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3034,17 +5036,30 @@ pokedex = {
     "crabominable": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3054,17 +5069,30 @@ pokedex = {
     "cramorant": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3074,17 +5102,30 @@ pokedex = {
     "croagunk": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3093,17 +5134,30 @@ pokedex = {
     "croaxicity": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3112,17 +5166,30 @@ pokedex = {
     "toxicroak": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3132,17 +5199,30 @@ pokedex = {
     "cryogonal": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3152,17 +5232,30 @@ pokedex = {
     "cubchoo": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3171,17 +5264,30 @@ pokedex = {
     "beartic": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3191,17 +5297,30 @@ pokedex = {
     "cubone": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3210,17 +5329,30 @@ pokedex = {
     "marowak": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3230,17 +5362,30 @@ pokedex = {
     "cufant": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3249,17 +5394,30 @@ pokedex = {
     "copperajah": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3269,17 +5427,30 @@ pokedex = {
     "cutiefly": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3288,17 +5459,30 @@ pokedex = {
     "ribombee": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3308,17 +5492,30 @@ pokedex = {
     "cyclizar": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3328,17 +5525,30 @@ pokedex = {
     "cyndaquil": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3347,17 +5557,30 @@ pokedex = {
     "quilava": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3366,17 +5589,30 @@ pokedex = {
     "typhlosion": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3386,17 +5622,30 @@ pokedex = {
     "darumaka": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3405,17 +5654,30 @@ pokedex = {
     "darumilla": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3424,17 +5686,30 @@ pokedex = {
     "darmanitan": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3444,17 +5719,30 @@ pokedex = {
     "dedenne": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3464,17 +5752,30 @@ pokedex = {
     "deerling": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3483,17 +5784,30 @@ pokedex = {
     "plantalope": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3502,17 +5816,30 @@ pokedex = {
     "sawsbuck": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3522,17 +5849,30 @@ pokedex = {
     "deino": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3541,17 +5881,30 @@ pokedex = {
     "zweilous": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3560,17 +5913,30 @@ pokedex = {
     "hydreigon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3580,17 +5946,30 @@ pokedex = {
     "delibird": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3600,17 +5979,30 @@ pokedex = {
     "dewpider": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3619,17 +6011,30 @@ pokedex = {
     "aquaronetta": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3638,17 +6043,30 @@ pokedex = {
     "araquanid": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3658,17 +6076,30 @@ pokedex = {
     "dhelmise": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3678,17 +6109,30 @@ pokedex = {
     "diglett": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3697,17 +6141,30 @@ pokedex = {
     "dugtrio": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3717,17 +6174,30 @@ pokedex = {
     "ditto": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3737,17 +6207,30 @@ pokedex = {
     "doduno": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3756,17 +6239,30 @@ pokedex = {
     "doduo": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3775,17 +6271,30 @@ pokedex = {
     "dodrio": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3795,17 +6304,30 @@ pokedex = {
     "dondozo": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3815,17 +6337,30 @@ pokedex = {
     "drampa": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3835,17 +6370,30 @@ pokedex = {
     "dratini": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3854,17 +6402,30 @@ pokedex = {
     "dragonair": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3873,17 +6434,30 @@ pokedex = {
     "dragonite": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3893,17 +6467,30 @@ pokedex = {
     "dreepy": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3912,17 +6499,30 @@ pokedex = {
     "drakloak": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3931,17 +6531,30 @@ pokedex = {
     "dragapult": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3951,17 +6564,30 @@ pokedex = {
     "drifloon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3970,17 +6596,30 @@ pokedex = {
     "drifblim": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -3990,17 +6629,30 @@ pokedex = {
     "drilbur": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4009,17 +6661,30 @@ pokedex = {
     "excadrill": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4029,17 +6694,30 @@ pokedex = {
     "drowzee": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4048,17 +6726,30 @@ pokedex = {
     "hypno": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4068,17 +6759,30 @@ pokedex = {
     "druddigon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4088,17 +6792,30 @@ pokedex = {
     "ducklett": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4107,17 +6824,30 @@ pokedex = {
     "goslett": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4126,17 +6856,30 @@ pokedex = {
     "swanna": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4146,17 +6889,30 @@ pokedex = {
     "dunsparce": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4165,17 +6921,30 @@ pokedex = {
     "dudunsparce": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4185,17 +6954,30 @@ pokedex = {
     "duraludon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4204,17 +6986,30 @@ pokedex = {
     "archaludon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4224,17 +7019,30 @@ pokedex = {
     "durant": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4244,17 +7052,30 @@ pokedex = {
     "duskull": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4263,17 +7084,30 @@ pokedex = {
     "dusclops": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4282,17 +7116,30 @@ pokedex = {
     "dusknoir": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4302,17 +7149,30 @@ pokedex = {
     "driftle": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4321,17 +7181,30 @@ pokedex = {
     "dwebble": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4340,17 +7213,30 @@ pokedex = {
     "crustle": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4360,17 +7246,30 @@ pokedex = {
     "eevee": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4379,17 +7278,30 @@ pokedex = {
     "espeon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4398,17 +7310,30 @@ pokedex = {
     "flareon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4417,17 +7342,30 @@ pokedex = {
     "glaceon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4436,17 +7374,30 @@ pokedex = {
     "jolteon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4455,17 +7406,30 @@ pokedex = {
     "leafeon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4474,17 +7438,30 @@ pokedex = {
     "sylveon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4493,17 +7470,30 @@ pokedex = {
     "umbreon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4512,17 +7502,30 @@ pokedex = {
     "vaporeon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4532,17 +7535,30 @@ pokedex = {
     "eiscue": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4552,17 +7568,30 @@ pokedex = {
     "ekans": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4571,17 +7600,30 @@ pokedex = {
     "arbok": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4591,17 +7633,30 @@ pokedex = {
     "electrike": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4610,17 +7665,30 @@ pokedex = {
     "manectric": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4630,17 +7698,30 @@ pokedex = {
     "elekid": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4649,17 +7730,30 @@ pokedex = {
     "electabuzz": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4668,17 +7762,30 @@ pokedex = {
     "electivire": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4688,17 +7795,30 @@ pokedex = {
     "elgyem": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4707,17 +7827,30 @@ pokedex = {
     "beheeyem": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4727,17 +7860,30 @@ pokedex = {
     "emolga": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4747,17 +7893,30 @@ pokedex = {
     "espurr": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4766,17 +7925,30 @@ pokedex = {
     "meowstic": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4786,17 +7958,30 @@ pokedex = {
     "exeggcute": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4805,17 +7990,30 @@ pokedex = {
     "exeggution": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4824,17 +8022,30 @@ pokedex = {
     "exeggutor": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4844,17 +8055,30 @@ pokedex = {
     "falinks": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4864,17 +8088,30 @@ pokedex = {
     "farfetch'd": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4883,17 +8120,30 @@ pokedex = {
     "dukefetch'd": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4902,17 +8152,30 @@ pokedex = {
     "sirfetch'd": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4922,17 +8185,30 @@ pokedex = {
     "feebas": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4941,17 +8217,30 @@ pokedex = {
     "milotic": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4961,17 +8250,30 @@ pokedex = {
     "fennekin": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4980,17 +8282,30 @@ pokedex = {
     "braixen": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -4999,17 +8314,30 @@ pokedex = {
     "delphox": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5019,17 +8347,30 @@ pokedex = {
     "ferroseed": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5038,17 +8379,30 @@ pokedex = {
     "ferrostalk": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5057,17 +8411,30 @@ pokedex = {
     "ferrothorn": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5077,17 +8444,30 @@ pokedex = {
     "fidough": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5096,17 +8476,30 @@ pokedex = {
     "dachsbun": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5116,17 +8509,30 @@ pokedex = {
     "finizen": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5135,17 +8541,30 @@ pokedex = {
     "palafin": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5155,17 +8574,30 @@ pokedex = {
     "fospheon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5174,17 +8606,30 @@ pokedex = {
     "finneon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5193,17 +8638,30 @@ pokedex = {
     "lumineon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5213,17 +8671,30 @@ pokedex = {
     "flabébé": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5232,17 +8703,30 @@ pokedex = {
     "floette": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5251,17 +8735,30 @@ pokedex = {
     "florges": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5271,17 +8768,30 @@ pokedex = {
     "flamigo": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5291,17 +8801,30 @@ pokedex = {
     "fletchling": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5310,17 +8833,30 @@ pokedex = {
     "fletchinder": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5329,17 +8865,30 @@ pokedex = {
     "talonflame": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5349,17 +8898,30 @@ pokedex = {
     "flittle": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5368,17 +8930,30 @@ pokedex = {
     "espathra": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5388,17 +8963,30 @@ pokedex = {
     "fomantis": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5407,17 +8995,30 @@ pokedex = {
     "lurantis": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5427,17 +9028,30 @@ pokedex = {
     "foongus": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5446,17 +9060,30 @@ pokedex = {
     "amoonguss": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5466,17 +9093,30 @@ pokedex = {
     "frigibax": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5485,17 +9125,30 @@ pokedex = {
     "arctibax": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5504,17 +9157,30 @@ pokedex = {
     "baxcalibur": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5524,17 +9190,30 @@ pokedex = {
     "frillish": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5543,17 +9222,30 @@ pokedex = {
     "jellicent": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5563,17 +9255,30 @@ pokedex = {
     "froakie": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5582,17 +9287,30 @@ pokedex = {
     "frogadier": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5601,17 +9319,30 @@ pokedex = {
     "greninja": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5621,17 +9352,30 @@ pokedex = {
     "fuecoco": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5640,17 +9384,30 @@ pokedex = {
     "crocalor": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5659,17 +9416,30 @@ pokedex = {
     "skeledirge": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5679,17 +9449,30 @@ pokedex = {
     "furfrou": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5699,17 +9482,30 @@ pokedex = {
     "gastly": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5718,17 +9514,30 @@ pokedex = {
     "haunter": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5737,17 +9546,30 @@ pokedex = {
     "gengar": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5757,17 +9579,30 @@ pokedex = {
     "geodude": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5776,17 +9611,30 @@ pokedex = {
     "graveler": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5795,17 +9643,30 @@ pokedex = {
     "golem": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5814,17 +9675,30 @@ pokedex = {
     "snolem": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5834,17 +9708,30 @@ pokedex = {
     "gible": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5853,17 +9740,30 @@ pokedex = {
     "gabite": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5872,17 +9772,30 @@ pokedex = {
     "garchomp": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5892,17 +9805,30 @@ pokedex = {
     "gimmighoul": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5911,17 +9837,30 @@ pokedex = {
     "gholdengo": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5931,17 +9870,30 @@ pokedex = {
     "girafarig": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5950,17 +9902,30 @@ pokedex = {
     "farigiraf": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5970,17 +9935,30 @@ pokedex = {
     "glameow": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -5989,17 +9967,30 @@ pokedex = {
     "purugly": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6009,17 +10000,30 @@ pokedex = {
     "gligar": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6028,17 +10032,30 @@ pokedex = {
     "gliscor": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6048,17 +10065,30 @@ pokedex = {
     "glimmet": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6067,17 +10097,30 @@ pokedex = {
     "glimmora": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6087,17 +10130,30 @@ pokedex = {
     "goldeen": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6106,17 +10162,30 @@ pokedex = {
     "seaking": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6126,17 +10195,30 @@ pokedex = {
     "golett": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6145,17 +10227,30 @@ pokedex = {
     "golurk": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6165,17 +10260,30 @@ pokedex = {
     "goomy": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6184,17 +10292,30 @@ pokedex = {
     "sliggoo": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6203,17 +10324,30 @@ pokedex = {
     "goodra": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6223,17 +10357,30 @@ pokedex = {
     "gossifleur": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6242,17 +10389,30 @@ pokedex = {
     "eldegoss": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6262,17 +10422,30 @@ pokedex = {
     "gothita": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6281,17 +10454,30 @@ pokedex = {
     "gothorita": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6300,17 +10486,30 @@ pokedex = {
     "gothitelle": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6320,17 +10519,30 @@ pokedex = {
     "greavard": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6339,17 +10551,30 @@ pokedex = {
     "houndstone": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6359,17 +10584,30 @@ pokedex = {
     "putri": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6378,17 +10616,30 @@ pokedex = {
     "grimer": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6397,17 +10648,30 @@ pokedex = {
     "muk": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6417,17 +10681,30 @@ pokedex = {
     "grookey": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6436,17 +10713,30 @@ pokedex = {
     "thwackey": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6455,17 +10745,30 @@ pokedex = {
     "rillaboom": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6475,17 +10778,30 @@ pokedex = {
     "growlithe": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6494,17 +10810,30 @@ pokedex = {
     "arcanine": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6514,17 +10843,30 @@ pokedex = {
     "grubbin": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6533,17 +10875,30 @@ pokedex = {
     "charjabug": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6552,17 +10907,30 @@ pokedex = {
     "vikavolt": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6572,17 +10940,30 @@ pokedex = {
     "gulpin": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6591,17 +10972,30 @@ pokedex = {
     "gluttin": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6610,17 +11004,30 @@ pokedex = {
     "swalot": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6630,17 +11037,30 @@ pokedex = {
     "happiny": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6649,17 +11069,30 @@ pokedex = {
     "chansey": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6668,17 +11101,30 @@ pokedex = {
     "blissey": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6688,17 +11134,30 @@ pokedex = {
     "hatenna": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6707,17 +11166,30 @@ pokedex = {
     "hattrem": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6726,17 +11198,30 @@ pokedex = {
     "hatterene": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6746,17 +11231,30 @@ pokedex = {
     "hawlucha": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6766,17 +11264,30 @@ pokedex = {
     "heatmor": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6786,17 +11297,30 @@ pokedex = {
     "helioptile": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6805,17 +11329,30 @@ pokedex = {
     "heliolisk": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6825,17 +11362,30 @@ pokedex = {
     "heracross": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6845,17 +11395,30 @@ pokedex = {
     "hippocaf": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6864,17 +11427,30 @@ pokedex = {
     "hippopotas": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6883,17 +11459,30 @@ pokedex = {
     "hippowdon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6903,17 +11492,30 @@ pokedex = {
     "honedge": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6922,17 +11524,30 @@ pokedex = {
     "doublade": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6941,17 +11556,30 @@ pokedex = {
     "aegislash": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6961,17 +11589,30 @@ pokedex = {
     "hoothoot": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -6980,17 +11621,30 @@ pokedex = {
     "noctowl": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7000,17 +11654,30 @@ pokedex = {
     "hoppip": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7019,17 +11686,30 @@ pokedex = {
     "skiploom": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7038,17 +11718,30 @@ pokedex = {
     "jumpluff": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7058,17 +11751,30 @@ pokedex = {
     "horsea": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7077,17 +11783,30 @@ pokedex = {
     "seadra": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7096,17 +11815,30 @@ pokedex = {
     "kingdra": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7116,17 +11848,30 @@ pokedex = {
     "houndour": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7135,17 +11880,30 @@ pokedex = {
     "houndevil": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7154,17 +11912,30 @@ pokedex = {
     "houndoom": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7174,17 +11945,30 @@ pokedex = {
     "igglybuff": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7193,17 +11977,30 @@ pokedex = {
     "jigglypuff": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7212,17 +12009,30 @@ pokedex = {
     "wigglytuff": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7232,17 +12042,30 @@ pokedex = {
     "illumise": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7252,17 +12075,30 @@ pokedex = {
     "impidimp": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7271,17 +12107,30 @@ pokedex = {
     "morgrem": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7290,17 +12139,30 @@ pokedex = {
     "grimmsnarl": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7310,17 +12172,30 @@ pokedex = {
     "indeedee": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7330,17 +12205,30 @@ pokedex = {
     "inkay": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7349,17 +12237,30 @@ pokedex = {
     "malamar": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7369,17 +12270,30 @@ pokedex = {
     "jangmo-o": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7388,17 +12302,30 @@ pokedex = {
     "hakamo-o": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7407,17 +12334,30 @@ pokedex = {
     "kommo-o": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7427,17 +12367,30 @@ pokedex = {
     "joltik": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7446,17 +12399,30 @@ pokedex = {
     "galvantula": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7466,17 +12432,30 @@ pokedex = {
     "kangaskhan": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7486,17 +12465,30 @@ pokedex = {
     "karrablast": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7505,17 +12497,30 @@ pokedex = {
     "escavalier": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7525,17 +12530,30 @@ pokedex = {
     "kecleon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7545,17 +12563,30 @@ pokedex = {
     "klawf": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7565,17 +12596,30 @@ pokedex = {
     "klefki": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7585,17 +12629,30 @@ pokedex = {
     "klink": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7604,17 +12661,30 @@ pokedex = {
     "klang": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7623,17 +12693,30 @@ pokedex = {
     "klinklang": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7643,17 +12726,30 @@ pokedex = {
     "wooping": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7662,17 +12758,30 @@ pokedex = {
     "koffing": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7681,17 +12790,30 @@ pokedex = {
     "weezing": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7701,17 +12823,30 @@ pokedex = {
     "komala": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7721,17 +12856,30 @@ pokedex = {
     "krabby": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7740,17 +12888,30 @@ pokedex = {
     "kingler": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7760,17 +12921,30 @@ pokedex = {
     "kricketot": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7779,17 +12953,30 @@ pokedex = {
     "kricketune": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7799,17 +12986,30 @@ pokedex = {
     "lapras": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7819,17 +13019,30 @@ pokedex = {
     "larvesta": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7838,17 +13051,30 @@ pokedex = {
     "volcarona": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7858,17 +13084,30 @@ pokedex = {
     "larvitar": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7877,17 +13116,30 @@ pokedex = {
     "pupitar": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7896,17 +13148,30 @@ pokedex = {
     "tyranitar": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7916,17 +13181,30 @@ pokedex = {
     "lechonk": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7935,17 +13213,30 @@ pokedex = {
     "oinkologne": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7955,17 +13246,30 @@ pokedex = {
     "ledyba": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7974,17 +13278,30 @@ pokedex = {
     "ledian": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -7994,17 +13311,30 @@ pokedex = {
     "lickitung": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8013,17 +13343,30 @@ pokedex = {
     "lickilicky": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8033,17 +13376,30 @@ pokedex = {
     "lillipup": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8052,17 +13408,30 @@ pokedex = {
     "herdier": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8071,17 +13440,30 @@ pokedex = {
     "stoutland": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8091,17 +13473,30 @@ pokedex = {
     "litleo": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8110,17 +13505,30 @@ pokedex = {
     "manecoal": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8129,17 +13537,30 @@ pokedex = {
     "pyroar": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8149,17 +13570,30 @@ pokedex = {
     "litten": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8168,17 +13602,30 @@ pokedex = {
     "torracat": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8187,17 +13634,30 @@ pokedex = {
     "incineroar": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8207,17 +13667,30 @@ pokedex = {
     "litwick": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8226,17 +13699,30 @@ pokedex = {
     "lampent": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8245,17 +13731,30 @@ pokedex = {
     "chandelure": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8265,17 +13764,30 @@ pokedex = {
     "lotad": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8284,17 +13796,30 @@ pokedex = {
     "lombre": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8303,17 +13828,30 @@ pokedex = {
     "ludicolo": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8323,17 +13861,30 @@ pokedex = {
     "lunatone": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8343,17 +13894,30 @@ pokedex = {
     "luvdisc": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8363,17 +13927,30 @@ pokedex = {
     "machop": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8382,17 +13959,30 @@ pokedex = {
     "machoke": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8401,17 +13991,30 @@ pokedex = {
     "machamp": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8421,17 +14024,30 @@ pokedex = {
     "magby": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8440,17 +14056,30 @@ pokedex = {
     "magmar": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8459,17 +14088,30 @@ pokedex = {
     "magmortar": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8479,17 +14121,30 @@ pokedex = {
     "magikarp": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8498,17 +14153,30 @@ pokedex = {
     "gyarados": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8518,17 +14186,30 @@ pokedex = {
     "magnemite": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8537,17 +14218,30 @@ pokedex = {
     "magneton": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8556,17 +14250,30 @@ pokedex = {
     "magnezone": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8576,17 +14283,30 @@ pokedex = {
     "makuhita": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8595,17 +14315,30 @@ pokedex = {
     "sumoyama": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8614,17 +14347,30 @@ pokedex = {
     "hariyama": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8634,17 +14380,30 @@ pokedex = {
     "mankey": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8653,17 +14412,30 @@ pokedex = {
     "primeape": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8672,17 +14444,30 @@ pokedex = {
     "annihilape": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8692,17 +14477,30 @@ pokedex = {
     "mantyke": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8711,17 +14509,30 @@ pokedex = {
     "mantine": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8731,17 +14542,30 @@ pokedex = {
     "maractus": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8751,17 +14575,30 @@ pokedex = {
     "mareanie": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8770,17 +14607,30 @@ pokedex = {
     "toxapex": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8790,17 +14640,30 @@ pokedex = {
     "mareep": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8809,17 +14672,30 @@ pokedex = {
     "flaaffy": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8828,17 +14704,30 @@ pokedex = {
     "ampharos": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8848,17 +14737,30 @@ pokedex = {
     "maschiff": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8867,17 +14769,30 @@ pokedex = {
     "mabosstiff": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8887,17 +14802,30 @@ pokedex = {
     "mawile": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8907,17 +14835,30 @@ pokedex = {
     "meditite": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8926,17 +14867,30 @@ pokedex = {
     "medicham": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8945,17 +14899,30 @@ pokedex = {
     "medisimi": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8965,17 +14932,30 @@ pokedex = {
     "konya": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -8984,17 +14964,30 @@ pokedex = {
     "meowth": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9003,17 +14996,30 @@ pokedex = {
     "persian": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9022,17 +15028,30 @@ pokedex = {
     "perrserker": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9041,17 +15060,30 @@ pokedex = {
     "härbalhalla": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9061,17 +15093,30 @@ pokedex = {
     "mienfoo": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9080,17 +15125,30 @@ pokedex = {
     "mienshao": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9100,17 +15158,30 @@ pokedex = {
     "milcery": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9119,17 +15190,30 @@ pokedex = {
     "alcremie": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9139,17 +15223,30 @@ pokedex = {
     "miltank": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9159,17 +15256,30 @@ pokedex = {
     "mime jr.": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9178,17 +15288,30 @@ pokedex = {
     "mx. mime": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9197,17 +15320,30 @@ pokedex = {
     "mx. rime": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9217,17 +15353,30 @@ pokedex = {
     "mimikyu": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9237,17 +15386,30 @@ pokedex = {
     "minccino": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9256,17 +15418,30 @@ pokedex = {
     "cinccino": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9276,17 +15451,30 @@ pokedex = {
     "minior": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9296,17 +15484,30 @@ pokedex = {
     "minun": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9316,17 +15517,30 @@ pokedex = {
     "misdreavus": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9335,17 +15549,30 @@ pokedex = {
     "mismagius": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9355,17 +15582,30 @@ pokedex = {
     "morelull": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9374,17 +15614,30 @@ pokedex = {
     "shiinotic": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9393,17 +15646,30 @@ pokedex = {
     "hypnoloma": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9413,17 +15679,30 @@ pokedex = {
     "morpeko": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9433,17 +15712,30 @@ pokedex = {
     "mudbray": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9452,17 +15744,30 @@ pokedex = {
     "mudsdale": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9472,17 +15777,30 @@ pokedex = {
     "mudkip": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9491,17 +15809,30 @@ pokedex = {
     "marshtomp": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9510,17 +15841,30 @@ pokedex = {
     "swampert": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9530,17 +15874,30 @@ pokedex = {
     "munchlax": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9549,17 +15906,30 @@ pokedex = {
     "snorlax": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9569,17 +15939,30 @@ pokedex = {
     "munna": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9588,17 +15971,30 @@ pokedex = {
     "musharna": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9608,17 +16004,30 @@ pokedex = {
     "murkrow": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9627,17 +16036,30 @@ pokedex = {
     "honchkrow": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9647,17 +16069,30 @@ pokedex = {
     "nacli": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9666,17 +16101,30 @@ pokedex = {
     "naclstack": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9685,17 +16133,30 @@ pokedex = {
     "garganacl": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9705,17 +16166,30 @@ pokedex = {
     "natu": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9724,17 +16198,30 @@ pokedex = {
     "xatu": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9744,17 +16231,30 @@ pokedex = {
     "nickit": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9763,17 +16263,30 @@ pokedex = {
     "thievul": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9783,17 +16296,30 @@ pokedex = {
     "nidoran": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9802,17 +16328,30 @@ pokedex = {
     "nidorina": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9821,17 +16360,30 @@ pokedex = {
     "nidoqueen": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9840,17 +16392,30 @@ pokedex = {
     "nidorino": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9859,17 +16424,30 @@ pokedex = {
     "nidoking": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9878,17 +16456,30 @@ pokedex = {
     "nidorinx": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9897,17 +16488,30 @@ pokedex = {
     "nidoarch": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9917,17 +16521,30 @@ pokedex = {
     "nincada": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9936,17 +16553,30 @@ pokedex = {
     "ninjask": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9955,17 +16585,30 @@ pokedex = {
     "shedinja": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9975,17 +16618,30 @@ pokedex = {
     "noibat": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -9994,17 +16650,30 @@ pokedex = {
     "noivabra": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10013,17 +16682,30 @@ pokedex = {
     "noivern": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10033,17 +16715,30 @@ pokedex = {
     "magnoscis": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10052,17 +16747,30 @@ pokedex = {
     "nosepass": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10071,17 +16779,30 @@ pokedex = {
     "probopass": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10091,17 +16812,30 @@ pokedex = {
     "numel": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10110,17 +16844,30 @@ pokedex = {
     "volcamel": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10129,17 +16876,30 @@ pokedex = {
     "camerupt": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10149,17 +16909,30 @@ pokedex = {
     "nymble": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10168,17 +16941,30 @@ pokedex = {
     "lokix": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10188,17 +16974,30 @@ pokedex = {
     "oddish": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10207,17 +17006,30 @@ pokedex = {
     "gloom": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10226,17 +17038,30 @@ pokedex = {
     "vileplume": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10245,17 +17070,30 @@ pokedex = {
     "bellossom": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10265,17 +17103,30 @@ pokedex = {
     "onix": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10284,17 +17135,30 @@ pokedex = {
     "steelix": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10304,17 +17168,30 @@ pokedex = {
     "oranguru": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10323,17 +17200,30 @@ pokedex = {
     "passimian": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10343,17 +17233,30 @@ pokedex = {
     "oricorio": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10363,17 +17266,30 @@ pokedex = {
     "orthworm": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10383,17 +17299,30 @@ pokedex = {
     "oshawott": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10402,17 +17331,30 @@ pokedex = {
     "dewott": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10421,17 +17363,30 @@ pokedex = {
     "samurott": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10441,17 +17396,30 @@ pokedex = {
     "pachirisu": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10461,17 +17429,30 @@ pokedex = {
     "panchain": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10480,17 +17461,30 @@ pokedex = {
     "simichain": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10500,17 +17494,30 @@ pokedex = {
     "pancham": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10519,17 +17526,30 @@ pokedex = {
     "pantemper": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10538,17 +17558,30 @@ pokedex = {
     "pangoro": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10558,17 +17591,30 @@ pokedex = {
     "panfist": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10577,17 +17623,30 @@ pokedex = {
     "simifist": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10597,17 +17656,30 @@ pokedex = {
     "panpour": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10616,17 +17688,30 @@ pokedex = {
     "simipour": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10636,17 +17721,30 @@ pokedex = {
     "pansage": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10655,17 +17753,30 @@ pokedex = {
     "simisage": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10675,17 +17786,30 @@ pokedex = {
     "pansand": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10694,17 +17818,30 @@ pokedex = {
     "simisand": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10714,17 +17851,30 @@ pokedex = {
     "pansear": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10733,17 +17883,30 @@ pokedex = {
     "simisear": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10753,17 +17916,30 @@ pokedex = {
     "pansoar": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10772,17 +17948,30 @@ pokedex = {
     "simisoar": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10792,17 +17981,30 @@ pokedex = {
     "pansting": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10811,17 +18013,30 @@ pokedex = {
     "simisting": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10831,17 +18046,30 @@ pokedex = {
     "panstone": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10850,17 +18078,30 @@ pokedex = {
     "simistone": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10870,17 +18111,30 @@ pokedex = {
     "paras": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10889,17 +18143,30 @@ pokedex = {
     "parasect": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10908,17 +18175,30 @@ pokedex = {
     "paraspore": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10927,17 +18207,30 @@ pokedex = {
     "paracide": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10947,17 +18240,30 @@ pokedex = {
     "patrat": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10966,17 +18272,30 @@ pokedex = {
     "watchog": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -10986,17 +18305,30 @@ pokedex = {
     "pawmi": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11005,17 +18337,30 @@ pokedex = {
     "pawmo": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11024,17 +18369,30 @@ pokedex = {
     "pawmot": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11044,17 +18402,30 @@ pokedex = {
     "pawniard": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11063,17 +18434,30 @@ pokedex = {
     "bisharp": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11082,17 +18466,30 @@ pokedex = {
     "kingambit": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11102,17 +18499,30 @@ pokedex = {
     "petilil": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11121,17 +18531,30 @@ pokedex = {
     "lilligant": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11141,17 +18564,30 @@ pokedex = {
     "phanpy": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11160,17 +18596,30 @@ pokedex = {
     "donphan": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11180,17 +18629,30 @@ pokedex = {
     "phantump": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11199,17 +18661,30 @@ pokedex = {
     "palmergeist": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11218,17 +18693,30 @@ pokedex = {
     "trevenant": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11238,17 +18726,30 @@ pokedex = {
     "pichu": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11257,17 +18758,30 @@ pokedex = {
     "pikachu": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11276,17 +18790,30 @@ pokedex = {
     "raichu": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11296,17 +18823,30 @@ pokedex = {
     "pidgey": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11315,17 +18855,30 @@ pokedex = {
     "pidgeotto": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11334,17 +18887,30 @@ pokedex = {
     "pidgeot": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11354,17 +18920,30 @@ pokedex = {
     "pidove": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11373,17 +18952,30 @@ pokedex = {
     "tranquill": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11392,17 +18984,30 @@ pokedex = {
     "unfezant": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11412,17 +19017,30 @@ pokedex = {
     "pikipek": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11431,17 +19049,30 @@ pokedex = {
     "trumbeak": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11450,17 +19081,30 @@ pokedex = {
     "toucannon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11470,17 +19114,30 @@ pokedex = {
     "pincurchin": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11490,17 +19147,30 @@ pokedex = {
     "pineco": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11509,17 +19179,30 @@ pokedex = {
     "forretress": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11529,17 +19212,30 @@ pokedex = {
     "pinsir": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11549,17 +19245,30 @@ pokedex = {
     "piplup": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11568,17 +19277,30 @@ pokedex = {
     "prinplup": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11587,17 +19309,30 @@ pokedex = {
     "empoleon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11607,17 +19342,30 @@ pokedex = {
     "plusle": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11627,17 +19375,30 @@ pokedex = {
     "poliwag": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11646,17 +19407,30 @@ pokedex = {
     "poliwhirl": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11665,17 +19439,30 @@ pokedex = {
     "poliwrath": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11684,17 +19471,30 @@ pokedex = {
     "politoed": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11704,17 +19504,30 @@ pokedex = {
     "coaltilly": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11723,17 +19536,30 @@ pokedex = {
     "ponyta": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11742,17 +19568,30 @@ pokedex = {
     "rapidash": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11762,17 +19601,30 @@ pokedex = {
     "poochyena": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11781,17 +19633,30 @@ pokedex = {
     "mightyena": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11801,17 +19666,30 @@ pokedex = {
     "popplio": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11820,17 +19698,30 @@ pokedex = {
     "brionne": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11839,17 +19730,30 @@ pokedex = {
     "primarina": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11859,17 +19763,30 @@ pokedex = {
     "porygon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11878,17 +19795,30 @@ pokedex = {
     "porygon2": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11897,17 +19827,30 @@ pokedex = {
     "porygon-z": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11917,17 +19860,30 @@ pokedex = {
     "psyduck": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11936,17 +19892,30 @@ pokedex = {
     "golduck": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11956,17 +19925,30 @@ pokedex = {
     "pumpkaboo": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11975,17 +19957,30 @@ pokedex = {
     "spectumpkin": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -11994,17 +19989,30 @@ pokedex = {
     "gourgeist": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12014,17 +20022,30 @@ pokedex = {
     "purrloin": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12033,17 +20054,30 @@ pokedex = {
     "liepard": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12053,17 +20087,30 @@ pokedex = {
     "pyukumuku": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12073,17 +20120,30 @@ pokedex = {
     "quaxly": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12092,17 +20152,30 @@ pokedex = {
     "quaxwell": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12111,17 +20184,30 @@ pokedex = {
     "quaquaval": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12131,17 +20217,30 @@ pokedex = {
     "qwilfish": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12151,17 +20250,30 @@ pokedex = {
     "ralts": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12170,17 +20282,30 @@ pokedex = {
     "kirlia": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12189,17 +20314,30 @@ pokedex = {
     "gallade": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12208,17 +20346,30 @@ pokedex = {
     "gardevoir": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12228,17 +20379,30 @@ pokedex = {
     "rattata": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12247,17 +20411,30 @@ pokedex = {
     "raticate": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12267,17 +20444,30 @@ pokedex = {
     "relicanth": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12287,17 +20477,30 @@ pokedex = {
     "rellor": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12306,17 +20509,30 @@ pokedex = {
     "rabsca": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12326,17 +20542,30 @@ pokedex = {
     "remoraid": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12345,17 +20574,30 @@ pokedex = {
     "mackazine": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12364,17 +20606,30 @@ pokedex = {
     "octillery": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12384,17 +20639,30 @@ pokedex = {
     "rhyhorn": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12403,17 +20671,30 @@ pokedex = {
     "rhydon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12422,17 +20703,30 @@ pokedex = {
     "rhyperior": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12442,17 +20736,30 @@ pokedex = {
     "riolu": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12461,17 +20768,30 @@ pokedex = {
     "lucario": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12481,17 +20801,30 @@ pokedex = {
     "rockruff": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12500,17 +20833,30 @@ pokedex = {
     "rocanine": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12519,17 +20865,30 @@ pokedex = {
     "lycanroc": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12539,17 +20898,30 @@ pokedex = {
     "roggenrola": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12558,17 +20930,30 @@ pokedex = {
     "boldore": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12577,17 +20962,30 @@ pokedex = {
     "gigalith": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12597,17 +20995,30 @@ pokedex = {
     "rolycoly": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12616,17 +21027,30 @@ pokedex = {
     "carkol": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12635,17 +21059,30 @@ pokedex = {
     "coalossal": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12655,17 +21092,30 @@ pokedex = {
     "rookidee": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12674,17 +21124,30 @@ pokedex = {
     "corvisquire": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12693,17 +21156,30 @@ pokedex = {
     "corviknight": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12713,17 +21189,30 @@ pokedex = {
     "rotom": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12733,17 +21222,30 @@ pokedex = {
     "rowlet": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12752,17 +21254,30 @@ pokedex = {
     "dartrix": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12771,17 +21286,30 @@ pokedex = {
     "decidueye": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12791,17 +21319,30 @@ pokedex = {
     "rufflet": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12810,17 +21351,30 @@ pokedex = {
     "braviary": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12830,17 +21384,30 @@ pokedex = {
     "sableye": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12850,17 +21417,30 @@ pokedex = {
     "salandit": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12869,17 +21449,30 @@ pokedex = {
     "salazzle": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12888,17 +21481,30 @@ pokedex = {
     "salamonarch": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12908,17 +21514,30 @@ pokedex = {
     "sandile": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12927,17 +21546,30 @@ pokedex = {
     "krokorok": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12946,17 +21578,30 @@ pokedex = {
     "krookodile": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12966,17 +21611,30 @@ pokedex = {
     "sandshrew": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -12985,17 +21643,30 @@ pokedex = {
     "sandskitter": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13004,17 +21675,30 @@ pokedex = {
     "sandslash": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13024,17 +21708,30 @@ pokedex = {
     "sandygast": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13043,17 +21740,30 @@ pokedex = {
     "palossand": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13063,17 +21773,30 @@ pokedex = {
     "sawk": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13084,17 +21807,30 @@ pokedex = {
     "scaredeline": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13103,17 +21839,30 @@ pokedex = {
     "maskcatier": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13123,17 +21872,30 @@ pokedex = {
     "scatterbug": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13142,17 +21904,30 @@ pokedex = {
     "spewpa": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13161,17 +21936,30 @@ pokedex = {
     "vivillon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13181,17 +21969,30 @@ pokedex = {
     "scorbunny": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13200,17 +22001,30 @@ pokedex = {
     "raboot": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13219,17 +22033,30 @@ pokedex = {
     "cinderace": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13239,17 +22066,30 @@ pokedex = {
     "scraggy": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13258,17 +22098,30 @@ pokedex = {
     "scrafty": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13278,17 +22131,30 @@ pokedex = {
     "scyther": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13297,17 +22163,30 @@ pokedex = {
     "scizor": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13317,17 +22196,30 @@ pokedex = {
     "seedot": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13336,17 +22228,30 @@ pokedex = {
     "nuzleaf": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13355,17 +22260,30 @@ pokedex = {
     "shiftry": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13375,17 +22293,30 @@ pokedex = {
     "seel": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13394,17 +22325,30 @@ pokedex = {
     "dewgong": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13414,17 +22358,30 @@ pokedex = {
     "sentret": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13433,17 +22390,30 @@ pokedex = {
     "furret": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13453,17 +22423,30 @@ pokedex = {
     "seviper": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13473,17 +22456,30 @@ pokedex = {
     "sewaddle": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13492,17 +22488,30 @@ pokedex = {
     "swadloon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13511,17 +22520,30 @@ pokedex = {
     "leavanny": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13531,17 +22553,30 @@ pokedex = {
     "shellder": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13550,17 +22585,30 @@ pokedex = {
     "musselder": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13569,17 +22617,30 @@ pokedex = {
     "cloyster": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13589,17 +22650,30 @@ pokedex = {
     "shellos": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13608,17 +22682,30 @@ pokedex = {
     "gastrodon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13628,17 +22715,30 @@ pokedex = {
     "shelmet": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13647,17 +22747,30 @@ pokedex = {
     "accelgor": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13667,17 +22780,30 @@ pokedex = {
     "shinx": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13686,17 +22812,30 @@ pokedex = {
     "luxio": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13705,17 +22844,30 @@ pokedex = {
     "luxray": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13725,17 +22877,30 @@ pokedex = {
     "shroodle": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13744,17 +22909,30 @@ pokedex = {
     "grafaiai": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13764,17 +22942,30 @@ pokedex = {
     "shroomish": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13783,17 +22974,30 @@ pokedex = {
     "breloom": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13803,17 +23007,30 @@ pokedex = {
     "shuckle": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13823,17 +23040,30 @@ pokedex = {
     "shuppet": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13842,17 +23072,30 @@ pokedex = {
     "banette": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13862,17 +23105,30 @@ pokedex = {
     "sigilyph": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13882,17 +23138,30 @@ pokedex = {
     "silicobra": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13901,17 +23170,30 @@ pokedex = {
     "graviper": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13920,17 +23202,30 @@ pokedex = {
     "sandaconda": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13940,17 +23235,30 @@ pokedex = {
     "sinistea": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13959,17 +23267,30 @@ pokedex = {
     "polteageist": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13979,17 +23300,30 @@ pokedex = {
     "sizzlipede": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -13998,17 +23332,30 @@ pokedex = {
     "burntipede": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14017,17 +23364,30 @@ pokedex = {
     "centiskorch": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14037,17 +23397,30 @@ pokedex = {
     "skarmory": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14057,17 +23430,30 @@ pokedex = {
     "skibilly": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14076,17 +23462,30 @@ pokedex = {
     "skiddo": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14095,17 +23494,30 @@ pokedex = {
     "gogoat": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14115,17 +23527,30 @@ pokedex = {
     "skitty": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14134,17 +23559,30 @@ pokedex = {
     "delcatty": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14154,17 +23592,30 @@ pokedex = {
     "skorupi": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14173,17 +23624,30 @@ pokedex = {
     "drapion": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14193,17 +23657,30 @@ pokedex = {
     "skrelp": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14212,17 +23689,30 @@ pokedex = {
     "hippocalge": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14231,17 +23721,30 @@ pokedex = {
     "dragalge": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14251,17 +23754,30 @@ pokedex = {
     "skwovet": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14270,17 +23786,30 @@ pokedex = {
     "greedent": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14290,17 +23819,30 @@ pokedex = {
     "slakoth": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14309,17 +23851,30 @@ pokedex = {
     "vigoroth": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14328,17 +23883,30 @@ pokedex = {
     "slaking": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14348,17 +23916,30 @@ pokedex = {
     "slowpoke": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14367,17 +23948,30 @@ pokedex = {
     "slowbro": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14386,17 +23980,30 @@ pokedex = {
     "slowking": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14406,17 +24013,30 @@ pokedex = {
     "slugma": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14425,17 +24045,30 @@ pokedex = {
     "magcargo": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14444,17 +24077,30 @@ pokedex = {
     "eschargot": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14464,17 +24110,30 @@ pokedex = {
     "smeargle": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14484,17 +24143,30 @@ pokedex = {
     "smoliv": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14503,17 +24175,30 @@ pokedex = {
     "dolliv": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14522,17 +24207,30 @@ pokedex = {
     "arboliva": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14542,17 +24240,30 @@ pokedex = {
     "sneasel": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14561,17 +24272,30 @@ pokedex = {
     "weavile": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14581,17 +24305,30 @@ pokedex = {
     "snivy": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14600,17 +24337,30 @@ pokedex = {
     "servine": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14619,17 +24369,30 @@ pokedex = {
     "serperior": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14639,17 +24402,30 @@ pokedex = {
     "snom": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14658,17 +24434,30 @@ pokedex = {
     "frosmoth": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14678,17 +24467,30 @@ pokedex = {
     "snorunt": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14697,17 +24499,30 @@ pokedex = {
     "glalie": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14716,17 +24531,30 @@ pokedex = {
     "froslass": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14736,17 +24564,30 @@ pokedex = {
     "yellisnow": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14755,17 +24596,30 @@ pokedex = {
     "snover": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14774,17 +24628,30 @@ pokedex = {
     "abomasnow": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14794,17 +24661,30 @@ pokedex = {
     "snowshrew": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14813,17 +24693,30 @@ pokedex = {
     "snowskitter": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14832,17 +24725,30 @@ pokedex = {
     "snowslash": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14852,17 +24758,30 @@ pokedex = {
     "snubbull": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14871,17 +24790,30 @@ pokedex = {
     "granbull": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14891,17 +24823,30 @@ pokedex = {
     "sobble": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14910,17 +24855,30 @@ pokedex = {
     "drizzile": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14929,17 +24887,30 @@ pokedex = {
     "inteleon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14949,17 +24920,30 @@ pokedex = {
     "solosis": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14968,17 +24952,30 @@ pokedex = {
     "duosion": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -14987,17 +24984,30 @@ pokedex = {
     "reuniclus": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15007,17 +25017,30 @@ pokedex = {
     "solrock": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15027,17 +25050,30 @@ pokedex = {
     "spearow": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15046,17 +25082,30 @@ pokedex = {
     "fearow": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15065,17 +25114,30 @@ pokedex = {
     "terrow": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15085,17 +25147,30 @@ pokedex = {
     "spheal": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15104,17 +25179,30 @@ pokedex = {
     "sealeo": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15123,17 +25211,30 @@ pokedex = {
     "walrein": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15143,17 +25244,30 @@ pokedex = {
     "spinarak": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15162,17 +25276,30 @@ pokedex = {
     "ariados": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15182,17 +25309,30 @@ pokedex = {
     "spinda": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15202,17 +25342,30 @@ pokedex = {
     "spiritomb": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15222,17 +25375,30 @@ pokedex = {
     "spoink": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15241,17 +25407,30 @@ pokedex = {
     "grumpig": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15261,17 +25440,30 @@ pokedex = {
     "sprigatito": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15280,17 +25472,30 @@ pokedex = {
     "floragato": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15299,17 +25504,30 @@ pokedex = {
     "meowscarada": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15319,17 +25537,30 @@ pokedex = {
     "spritzee": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15338,17 +25569,30 @@ pokedex = {
     "aromatisse": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15358,17 +25602,30 @@ pokedex = {
     "squawkabilly": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15378,17 +25635,30 @@ pokedex = {
     "squirtle": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15397,17 +25667,30 @@ pokedex = {
     "wartortle": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15416,17 +25699,30 @@ pokedex = {
     "blastoise": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15436,17 +25732,30 @@ pokedex = {
     "stantler": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15456,17 +25765,30 @@ pokedex = {
     "starly": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15475,17 +25797,30 @@ pokedex = {
     "staravia": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15494,17 +25829,30 @@ pokedex = {
     "staraptor": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15514,17 +25862,30 @@ pokedex = {
     "staryu": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15533,17 +25894,30 @@ pokedex = {
     "starmie": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15553,17 +25927,30 @@ pokedex = {
     "stonjourner": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15573,17 +25960,30 @@ pokedex = {
     "stufful": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15592,17 +25992,30 @@ pokedex = {
     "plushear": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15611,17 +26024,30 @@ pokedex = {
     "bewear": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15631,17 +26057,30 @@ pokedex = {
     "stunfisk": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15651,17 +26090,30 @@ pokedex = {
     "piiyunker": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15670,17 +26122,30 @@ pokedex = {
     "stunky": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15689,17 +26154,30 @@ pokedex = {
     "skuntank": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15709,17 +26187,30 @@ pokedex = {
     "sunkern": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15728,17 +26219,30 @@ pokedex = {
     "sunflora": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15748,17 +26252,30 @@ pokedex = {
     "surskit": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15767,17 +26284,30 @@ pokedex = {
     "masquerain": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15787,17 +26317,30 @@ pokedex = {
     "swablu": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15806,17 +26349,30 @@ pokedex = {
     "quetiria": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15825,17 +26381,30 @@ pokedex = {
     "altaria": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15845,17 +26414,30 @@ pokedex = {
     "swinub": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15864,17 +26446,30 @@ pokedex = {
     "piloswine": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15883,17 +26478,30 @@ pokedex = {
     "mamoswine": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15903,17 +26511,30 @@ pokedex = {
     "swirlix": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15922,17 +26543,30 @@ pokedex = {
     "slurpuff": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15942,17 +26576,30 @@ pokedex = {
     "tadbulb": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15961,17 +26608,30 @@ pokedex = {
     "bellibolt": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -15981,17 +26641,30 @@ pokedex = {
     "taillow": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16000,17 +26673,30 @@ pokedex = {
     "swellow": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16020,17 +26706,30 @@ pokedex = {
     "tandemaus": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16039,17 +26738,30 @@ pokedex = {
     "maushold": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16059,17 +26771,30 @@ pokedex = {
     "tangela": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16078,17 +26803,30 @@ pokedex = {
     "tangrowth": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16098,17 +26836,30 @@ pokedex = {
     "tarountula": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16117,17 +26868,30 @@ pokedex = {
     "spidops": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16137,17 +26901,30 @@ pokedex = {
     "tatsugiri": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16157,17 +26934,30 @@ pokedex = {
     "tauros": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16177,17 +26967,30 @@ pokedex = {
     "teddiursa": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16196,17 +26999,30 @@ pokedex = {
     "ursaring": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16216,17 +27032,30 @@ pokedex = {
     "tentacool": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16235,17 +27064,30 @@ pokedex = {
     "tentacruel": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16255,17 +27097,30 @@ pokedex = {
     "tepig": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16274,17 +27129,30 @@ pokedex = {
     "pignite": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16293,17 +27161,30 @@ pokedex = {
     "emboar": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16313,17 +27194,30 @@ pokedex = {
     "throh": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16333,17 +27227,30 @@ pokedex = {
     "timburr": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16352,17 +27259,30 @@ pokedex = {
     "gurdurr": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16371,17 +27291,30 @@ pokedex = {
     "conkeldurr": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16391,17 +27324,30 @@ pokedex = {
     "tinkatink": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16410,17 +27356,30 @@ pokedex = {
     "tinkatuff": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16429,17 +27388,30 @@ pokedex = {
     "tinkaton": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16449,17 +27421,30 @@ pokedex = {
     "toedscool": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16468,17 +27453,30 @@ pokedex = {
     "toedscruel": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16488,17 +27486,30 @@ pokedex = {
     "togedemaru": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16508,17 +27519,30 @@ pokedex = {
     "togepi": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16527,17 +27551,30 @@ pokedex = {
     "togetic": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16546,17 +27583,30 @@ pokedex = {
     "togekiss": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16566,17 +27616,30 @@ pokedex = {
     "torchic": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16585,17 +27648,30 @@ pokedex = {
     "combusken": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16604,17 +27680,30 @@ pokedex = {
     "blaziken": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16624,17 +27713,30 @@ pokedex = {
     "torkoal": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16644,17 +27746,30 @@ pokedex = {
     "totodile": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16663,17 +27778,30 @@ pokedex = {
     "croconaw": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16682,17 +27810,30 @@ pokedex = {
     "feraligatr": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16702,17 +27843,30 @@ pokedex = {
     "toxel": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16721,17 +27875,30 @@ pokedex = {
     "toxager": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16740,17 +27907,30 @@ pokedex = {
     "toxtricity": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16760,17 +27940,30 @@ pokedex = {
     "trapinch": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16779,17 +27972,30 @@ pokedex = {
     "vibrava": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16798,17 +28004,30 @@ pokedex = {
     "flygon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16818,17 +28037,30 @@ pokedex = {
     "treecko": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16837,17 +28069,30 @@ pokedex = {
     "grovyle": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16856,17 +28101,30 @@ pokedex = {
     "sceptile": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16876,17 +28134,30 @@ pokedex = {
     "tropius": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16896,17 +28167,30 @@ pokedex = {
     "trubbish": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16915,17 +28199,30 @@ pokedex = {
     "garbodor": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16935,17 +28232,30 @@ pokedex = {
     "turtonator": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16955,17 +28265,30 @@ pokedex = {
     "turtwig": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16974,17 +28297,30 @@ pokedex = {
     "grotle": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -16993,17 +28329,30 @@ pokedex = {
     "torterra": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17013,17 +28362,30 @@ pokedex = {
     "tympole": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17032,17 +28394,30 @@ pokedex = {
     "palpitoad": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17051,17 +28426,30 @@ pokedex = {
     "seismitoad": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17071,17 +28459,30 @@ pokedex = {
     "tynamo": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17090,17 +28491,30 @@ pokedex = {
     "eelektrik": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17109,17 +28523,30 @@ pokedex = {
     "eelektross": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17129,17 +28556,30 @@ pokedex = {
     "tyrogue": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17148,17 +28588,30 @@ pokedex = {
     "hitmonlee": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17167,17 +28620,30 @@ pokedex = {
     "hitmonchan": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17186,17 +28652,30 @@ pokedex = {
     "hitmontop": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17206,17 +28685,30 @@ pokedex = {
     "unown": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17226,17 +28718,30 @@ pokedex = {
     "vanillite": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17245,17 +28750,30 @@ pokedex = {
     "vanillish": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17264,17 +28782,30 @@ pokedex = {
     "vanilluxe": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17284,17 +28815,30 @@ pokedex = {
     "varoom": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17303,17 +28847,30 @@ pokedex = {
     "revavroom": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17323,17 +28880,30 @@ pokedex = {
     "veluza": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17343,17 +28913,30 @@ pokedex = {
     "venipede": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17362,17 +28945,30 @@ pokedex = {
     "whirlipede": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17381,17 +28977,30 @@ pokedex = {
     "scolipede": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17401,17 +29010,30 @@ pokedex = {
     "venonat": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17420,17 +29042,30 @@ pokedex = {
     "venomoth": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17440,17 +29075,30 @@ pokedex = {
     "volbeat": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17460,17 +29108,30 @@ pokedex = {
     "voltorb": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17479,17 +29140,30 @@ pokedex = {
     "electrode": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17499,17 +29173,30 @@ pokedex = {
     "vullaby": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17518,17 +29205,30 @@ pokedex = {
     "mandibuzz": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17538,17 +29238,30 @@ pokedex = {
     "vulpix": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17557,17 +29270,30 @@ pokedex = {
     "kismolder": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17576,17 +29302,30 @@ pokedex = {
     "ninetales": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17596,17 +29335,30 @@ pokedex = {
     "wailmer": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17615,17 +29367,30 @@ pokedex = {
     "wailord": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17635,17 +29400,30 @@ pokedex = {
     "wattrel": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17654,17 +29432,30 @@ pokedex = {
     "kilowattrel": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17674,17 +29465,30 @@ pokedex = {
     "weedle": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17693,17 +29497,30 @@ pokedex = {
     "kakuna": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17712,17 +29529,30 @@ pokedex = {
     "beedrill": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17732,17 +29562,30 @@ pokedex = {
     "whismur": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17751,17 +29594,30 @@ pokedex = {
     "loudred": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17770,17 +29626,30 @@ pokedex = {
     "exploud": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17790,17 +29659,30 @@ pokedex = {
     "wiglett": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17809,17 +29691,30 @@ pokedex = {
     "wugtrio": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17829,17 +29724,30 @@ pokedex = {
     "wimpod": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17848,17 +29756,30 @@ pokedex = {
     "golisopod": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17868,17 +29789,30 @@ pokedex = {
     "wingull": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17887,17 +29821,30 @@ pokedex = {
     "shoelican": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17906,17 +29853,30 @@ pokedex = {
     "pelipper": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17926,17 +29886,30 @@ pokedex = {
     "wishiwashi": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17946,17 +29919,30 @@ pokedex = {
     "woobat": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17965,17 +29951,30 @@ pokedex = {
     "swoobat": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -17985,17 +29984,30 @@ pokedex = {
     "wooloo": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18004,17 +30016,30 @@ pokedex = {
     "dubwool": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18024,17 +30049,30 @@ pokedex = {
     "wooper": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18043,17 +30081,30 @@ pokedex = {
     "imboglio": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18062,17 +30113,30 @@ pokedex = {
     "quagsire": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18081,17 +30145,30 @@ pokedex = {
     "clodsire": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18101,17 +30178,30 @@ pokedex = {
     "wurmple": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18120,17 +30210,30 @@ pokedex = {
     "cascoon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18139,17 +30242,30 @@ pokedex = {
     "dustox": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18158,17 +30274,30 @@ pokedex = {
     "silcoon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18177,17 +30306,30 @@ pokedex = {
     "beautifly": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18197,17 +30339,30 @@ pokedex = {
     "wynaut": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18216,17 +30371,30 @@ pokedex = {
     "wobbuffet": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18236,17 +30404,30 @@ pokedex = {
     "yamask": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18255,17 +30436,30 @@ pokedex = {
     "cofagrigus": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18274,17 +30468,30 @@ pokedex = {
     "runerigus": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18294,17 +30501,30 @@ pokedex = {
     "yamper": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18313,17 +30533,30 @@ pokedex = {
     "boltund": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18333,17 +30566,30 @@ pokedex = {
     "yanma": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18352,17 +30598,30 @@ pokedex = {
     "yanmega": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18372,17 +30631,30 @@ pokedex = {
     "yungoos": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18391,17 +30663,30 @@ pokedex = {
     "gumshoos": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18411,17 +30696,30 @@ pokedex = {
     "zangoose": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18431,17 +30729,30 @@ pokedex = {
     "zigzagoon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18450,17 +30761,30 @@ pokedex = {
     "linoone": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18469,17 +30793,30 @@ pokedex = {
     "obstagoon": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18489,17 +30826,30 @@ pokedex = {
     "zorua": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18508,17 +30858,30 @@ pokedex = {
     "zoroark": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18528,17 +30891,30 @@ pokedex = {
     "zubat": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18547,17 +30923,30 @@ pokedex = {
     "golbat": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
@@ -18566,20 +30955,37 @@ pokedex = {
     "crobat": {
         "family": "", 
         "species": "",
-		"stage": 0,
+		"stage": (0, False),
+		"evolves": (0, 0, 0),
+        "international": ["", "", "", "", "", "", ""],
 
-        "category": [],
-
-        "type": ("", ""),
-
-        "height": 0.0,
-        "weight": 0.0,
+		"dex": "",
+		
+        "forms": { "international": (0, 0) },
         "natureskew": [],
         "friendshipskew": 0,
+		"layingratio": 0,
+		"genderratio": (50, 50),
+		"eggcycles": 0,
+		"catchrate": 0,
+		"location": { 
+			"kanto":  [],
+			"johto":  [],
+			"hoenn":  [],
+			"sinnoh": [],
+			"unova":  [],
+			"kalos":  [],
+			"alola":  [],
+		},
 
+		"type": ("", ""),
 		"ability": [],
         "stats": [], 
         "wildmoves": [], 
         "trainmoves": []
     }
 }
+
+
+
+

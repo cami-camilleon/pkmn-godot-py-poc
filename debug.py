@@ -75,7 +75,9 @@ def charlist_debug():
 # add_attribute_to_pdex('"existingkey": "",\n', '\t\t"newkey": "",')
 # ^^^^ add line below group
 # add_attribute_to_pdex('"existingkey": "",\n\n', '\t\t"newkey": "",')
-# ^^^^ add line above group
+# ^^^^ add line above group (existing key is the last line in the group above group youre adding)
+# add_attribute_to_pdex('\n\t\t"existing key": "",\n\n', '')
+# ^^^^ remove line (make sure to comment out the first outfile.write and uncomment the second outfile.write)
 def add_attribute_to_pdex(location, line_to_add):
     """programatically adds a line to the dict belonging to each pokemon in data.pokedex
 
@@ -86,9 +88,11 @@ def add_attribute_to_pdex(location, line_to_add):
     outfile = open("data/dexedit-out.txt", "w")
 
     insplit = infile.read().split(location)
-    # print(f"{insplit[0]}\n{line_to_add}\n{insplit[1]}")
+
     outfile.write(f"{location}{line_to_add}\n".join(insplit))
+    # ^^^^ add a line
+    #outfile.write(f"{line_to_add}\n".join(insplit))
+    # ^^^^ remove line (line_to_add should be blank string)
 
     infile.close()
     outfile.close()
-    pass
