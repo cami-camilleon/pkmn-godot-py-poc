@@ -298,6 +298,10 @@ items = {
 # POKEMON - POKEMON - POKEMON - POKEMON - POKEMON - POKEMON - POKEMON - POKEMON - POKEMON - POKEMON - POKEMON - PO
 
 # total (pocket) monster of a list... ready?
+# family: latin family
+# species: latin pokemon species
+# stage: (which evolution stage it is, if its the primary stage)
+# evolves: (id of poke it evolves into [0 if no evo], level of evo [0 if non-applicable])
 
 pokedex = {
     "abra": {

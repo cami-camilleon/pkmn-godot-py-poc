@@ -114,17 +114,18 @@ class Character:
         #   example: She lives over there. (an "s" is put after "lives"); They live over here. ("" is put after "live")
         #   * the second to last entry in the pronoun list is "are" or "is"
         #   ^^^^ more code and rules will be added as more grammatical variances need to be implimented...
-        self.nature = natures[int(character[4])]
+        self.age = int(character[4])
+        self.nature = natures[int(character[5])]
 
-        self.region = [*regiontowns.keys()][int(character[5])]
-        self.town = regiontowns[self.region][int(character[6])]
-        self.address = int(character[7])
+        self.region = [*regiontowns.keys()][int(character[6])]
+        self.town = regiontowns[self.region][int(character[7])]
+        self.address = int(character[8])
         
         # populate interests dictionary
         # DEBUG NOTE: all categories are not yet indexed, once they are indexed and begin being populated with items,
         # we will use the ID taken from the file as the id of the thing to be placed in the dictionary, rather than 
         # putting the id in the dictionary itself 
-        for i, listnum in enumerate([8, 9, 10, 11, 12]):
+        for i, listnum in enumerate([9, 10, 11, 12, 13]):
             for j, cluster in enumerate(character[listnum].split(".")):
                 for interest in cluster.split(","):
                     categorykey = [*self.interests.keys()][i]
@@ -139,7 +140,7 @@ class Character:
         # referenced we will use the integer id to lookup the character in the table 
         for char in charfile_list:
             if int(char[0]) == self.id:
-                contacts = char.split(' ')[13]
+                contacts = char.split(' ')[14]
                 for i, category in enumerate(contacts.split(".")):
                     for entry in category.split(","):
                         if entry:

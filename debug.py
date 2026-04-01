@@ -3,7 +3,152 @@ from classes.player import Player
 from classes.npc import NPC
 # imported functions
 # imported datastructures, variables
-from data.data import charlist, pokedex
+from data.data import charlist
+
+def charlist_validate():
+    result = 0
+    main, charbackup = open("data/characters.txt"), open("data/charbackup.txt")
+
+    for backup, file in enumerate([main.read().split("\n"), charbackup.read().split("\n")]):
+        for fileline, item in enumerate(file):
+            region = -1
+            splititem = item.split(" ")
+            if len(splititem) != 15:
+                if not backup:
+                    result = 1
+                    break
+                else:
+                    result = f"CHARACTER DATA IN BOTH PRIMARY AND BACKUP SAVE FILE IS DAMAGED (line {fileline})"
+            for i, sub in enumerate(splititem):
+                match i:
+                    case 0 | 4 | 8:
+                        # validate id, age and address is an int
+                        try:
+                            int(sub)
+                        except:
+                            if not backup:
+                                result = 1
+                                break
+                            else:
+                                result = f"INVALID CHARACTER ID, CHARACTER AGE VALUE, OR CHARACTER ADDRESS ID (line {fileline})"
+                    case 1:
+                        # validate name
+                        pass
+                    case 2:
+                        # validate nickname
+                        pass
+                    case 3:
+                        # validate pronouns list
+                        if len(sub.split(",")) < 4:
+                                if not backup:
+                                    result = 1
+                                    break
+                                else:
+                                    result = f"INVALID CHARACTER PRONOUNS STRUCTURE (line {fileline})"
+                    case 5:
+                        # validate nature id
+                        try:
+                            int(sub)
+                        except:
+                            if not backup:
+                                result = 1
+                                break
+                            else:
+                                result = f"INVALID CHARACTER NATURE ID (INVALID TYPE) (line {fileline})"
+                        else:
+                            if int(sub) < 0 or int(sub) > 24:
+                                if not backup:
+                                    result = 1
+                                    break
+                                else:
+                                    result = f"INVALID CHARACTER NATURE ID (OUT OF RANGE) (line {fileline})"
+                    case 6:
+                        # validate region id
+                        try:
+                            int(sub)
+                        except:
+                            if not backup:
+                                result = 1
+                                break
+                            else:
+                                result = f"INVALID CHARACTER REGION ID (INVALID TYPE) (line {fileline})"
+                        else:
+                            if int(sub) < 0 or int(sub) > 6:
+                                if not backup:
+                                    result = 1
+                                    break
+                                else:
+                                    result = f"INVALID CHARACTER REGION ID (OUT OF RANGE) (line {fileline})"
+                            else:
+                                region = sub
+                    case 7:
+                        # validate town id
+                        if region != -1:
+                            try:
+                                int(sub)
+                            except:
+                                if not backup:
+                                    result = 1
+                                    break
+                                else:
+                                    result = f"INVALID CHARACTER TOWN ID (INVALID TYPE) (line {fileline})"
+                            else:
+                                if int(sub) < 0 or int(sub) > [9, 9, 16, 13, 17, 15, 8][int(region)]:
+                                    if not backup:
+                                        result = 1
+                                        break
+                                    else:
+                                        result = f"INVALID CHARACTER TOWN ID (OUT OF RANGE) (line {fileline})"
+                    case 9 | 10 | 11 | 12 | 13:
+                        # validate interest lists
+                        if len(sub.split(".")) != 4:
+                            if not backup:
+                                result = 1
+                                break
+                            else:
+                                result = f"INVALID CHARACTER INTERESTS STRUCTURE (line {fileline}, item {sub})"
+                        else:
+                            for each in sub.split("."):
+                                # validate individual items here... 
+                                # once the item lists are populated this will b possible
+                                pass
+                    case 14:
+                        # validate contacts list
+                        if len(sub.split(".")) != 10:
+                            if not backup:
+                                result = 1
+                                break
+                            else:
+                                result = f"INVALID CHARACTER CONTACTS STRUCTURE (line {fileline})"
+                        else:
+                            for each in sub.split("."):
+                                if each != "":
+                                    for another in each.split(","):
+                                        if len(another.split("-")) != 2:
+                                            if not backup:
+                                                result = 1
+                                                break
+                                            else:
+                                                result = f"INVALID STRUCTURE WITHIN CHARACTER CONTACTS (line {fileline})"
+                                if result == 1:
+                                    break
+        if result == 0:
+            break
+
+    main.close()
+    charbackup.close()
+
+    match result:
+        case 0:
+            print("Loaded characters successfully")
+        case 1:
+            print("Error loading character data: Backup loaded from data/charbackup.txt")
+            open("data/characters.txt", "w").write(open("data/charbackup.txt").read())
+        case _:
+            print(f"Both the main and backup saves are corrupted: {result}")
+            open("data/characters.txt", "w").write(open("data/charinitial.txt").read())
+            open("data/charbackup.txt", "w").write(open("data/charinitial.txt").read())
+        
 
 # create character list from characters.txt
 def charlist_read():
@@ -36,7 +181,8 @@ def charlist_debug():
         print(f"Character ID {char.id}: {char.pronouns[2].title()} name is {char.name.title()}.")
         print(f"{char.pronouns[0].title()} live{char.pronouns[len(char.pronouns) - 1]} in {char.town.title()} in the {char.region.title()} region.")
         print(f"{char.pronouns[0].title()} {char.pronouns[len(char.pronouns) - 2]} house number {char.address}")
-        print(f"{char.pronouns[0].title()} can be pretty {char.personality()}, as {char.pronouns[2]} Nature is {char.nature}.\n")
+        print(f"{char.pronouns[0].title()} can be pretty {char.personality()}, as {char.pronouns[2]} Nature is {char.nature}.")
+        print(f"{char.pronouns[0].title()}'{char.pronouns[len(char.pronouns) - 1] or "re"} {char.age} years old and {char.pronouns[2]} friends call {char.pronouns[1]} \"{char.nickname.title()}\".\n")
 
         for item in [*char.contacts.values()]:
             if item:
