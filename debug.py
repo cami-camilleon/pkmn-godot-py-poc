@@ -1,15 +1,20 @@
+# imported modules
+
 # imported classes
 from classes.player import Player
 from classes.npc import NPC
 # imported functions
 # imported datastructures, variables
-from data.data import charlist
+from data.data import charlist, natures, regiontowns
 
-def charlist_validate():
+def capital(string):
+    return f"{string[:1].upper()}{string[1:]}"
+
+def save_validate():
     result = 0
-    main, charbackup = open("data/characters.txt"), open("data/charbackup.txt")
+    save, savebackup = open("data/save.txt"), open("data/savebackup.txt")
 
-    for backup, file in enumerate([main.read().split("\n"), charbackup.read().split("\n")]):
+    for backup, file in enumerate([save.read().split("\n"), savebackup.read().split("\n")]):
         for fileline, item in enumerate(file):
             region = -1
             splititem = item.split(" ")
@@ -121,64 +126,162 @@ def charlist_validate():
                             else:
                                 result = f"INVALID CHARACTER CONTACTS STRUCTURE (line {fileline})"
                         else:
-                            for each in sub.split("."):
+                            for i, each in enumerate(sub.split(".")):
                                 if each != "":
                                     for another in each.split(","):
-                                        if len(another.split("-")) != 2:
-                                            if not backup:
-                                                result = 1
-                                                break
-                                            else:
-                                                result = f"INVALID STRUCTURE WITHIN CHARACTER CONTACTS (line {fileline})"
+                                        if (i == 8 or i == 9):
+                                            # exromantic or exserious, so only check for int
+                                            try:
+                                                int(another)
+                                            except:
+                                                if not backup:
+                                                    result = 1
+                                                    break
+                                                else:
+                                                    result = f"INVALID STRUCTURE WITHIN CHARACTER CONTACTS (line {fileline}) (exromantic/exserious contact(s) invalid)"
+                                        else:
+                                            # check if its properly hyphen formatted
+                                            if len(another.split("-")) != 2:
+                                                if not backup:
+                                                    result = 1
+                                                    break
+                                                else:
+                                                    result = f"INVALID STRUCTURE WITHIN CHARACTER CONTACTS (line {fileline}) (hypen-formatted contact(s) invalid)"
                                 if result == 1:
                                     break
         if result == 0:
             break
 
-    main.close()
-    charbackup.close()
+    save.close()
+    savebackup.close()
 
     match result:
         case 0:
-            print("Loaded characters successfully")
+            print("Loaded save successfully")
         case 1:
-            print("Error loading character data: Backup loaded from data/charbackup.txt")
-            open("data/characters.txt", "w").write(open("data/charbackup.txt").read())
+            print("Error loading save data: Backup loaded from data/savebackup.txt")
+
+            with open("data/save.txt", "w") as save:
+                with open("data/savebackup.txt") as savebackup:
+                    save.write(savebackup.read())
         case _:
-            print(f"Both the main and backup saves are corrupted: {result}")
-            open("data/characters.txt", "w").write(open("data/charinitial.txt").read())
-            open("data/charbackup.txt", "w").write(open("data/charinitial.txt").read())
-        
+            print(f"Both the main and backup saves are corrupted: {result}\nSAVES WILL NOW BE RESET TO saveinitial.txt")
+
+            with open("data/save.txt", "w") as save:
+                with open("data/savebackup.txt", "w") as savebackup:
+                    with open("data/saveinitial.txt") as initial:
+                        initialread = initial.read()
+                        save.write(initialread)
+                        savebackup.write(initialread)
+
 
 # create character list from characters.txt
-def charlist_read():
-    charfile = open("data/characters.txt")
-    charfile_list = charfile.read().split("\n")
-    for i in range(0, len(charfile_list)):
+def save_read():
+    save_validate()
+    with open("data/save.txt") as savefile:
+        savefile_list = savefile.read().split("\n")
+    for i in range(0, int(savefile_list[-1][:1]) + 1):
         match i:
             case 0:
-                charlist.append(Player(i))
+                Player(i)
             case _:
-                charlist.append(NPC(i))
+                NPC(i)
     
-    charfile.close()
-
+    for char in charlist:
+        char.populate_contacts()
+    
 
 # write the current charlist to characters.txt
 # warning: this WILL overwrite the old charlist current charlist - shouldnt be that crazy insecure but yea
-def charlist_write():
-    charfile = open("data/characters.txt")
+def save_write():
+    with open("data/savebackup.txt", "w") as savebackup:
+        with open("data/save.txt") as save:
+            savedata = save.read()
+            savebackup.write(savedata)
+    
+    savelist = []
+    for char in charlist:
+        # id
+        tempcharlist = [str(char.id)]
 
+        # name & nickname
+        for name in [char.name, char.nickname]:
+            name = r"\_".join(name.split(" "))
+            tempcharlist.append(name)
 
+        # pronoun list
+        tempcharlist.append(",".join(char.pronouns))
 
-    charfile.close()
-    pass
+        # age, nature
+        tempcharlist.extend([str(char.age), str(natures.index(char.nature))])
+
+        # region
+        tempcharlist.append(str([*regiontowns.keys()].index(char.region)))
+
+        # town
+        tempcharlist.append(str(regiontowns[char.region].index(char.town)))
+        tempcharlist.append(str(char.address))
+
+        # interest lists
+        categorylist = []
+        for categorykey in [*char.interests.keys()]:
+            # items, pokemon, cities, colors, flavors, etc.
+            opinionlist = []
+            for opinionkey in [*char.interests[categorykey].keys()]:
+                itemsub = []
+                for item in char.interests[categorykey][opinionkey]:
+                    itemsub.append(str(item))
+                opinionlist.append(",".join(itemsub))
+            categorylist.append(".".join(opinionlist))
+        tempcharlist.append(" ".join(categorylist))
+
+        # contacts list
+        contactlist = []
+        for contactskey in [*char.contacts.keys()]:
+            opinionlist = []
+            for contact in char.contacts[contactskey]:
+                contactsub = []
+                if type(contact) == tuple:
+                    #print("contact.id:", contact[0].id, "- friendship value:", contact[1])
+                    contactsub.append((str(contact[0].id), str(contact[1])))
+                else:
+                    #print("contact.id:", contact.id)
+                    contactsub.append(str(contact.id))
+                #print("contactsub:", contactsub)
+                opinionlist.append("-".join(*contactsub))
+            contactlist.append(",".join(opinionlist))
+        tempcharlist.append(".".join(contactlist))
+
+        #print(tempcharlist)
+        savelist.append(" ".join(tempcharlist))
+
+    #print(f"\n{"\n".join(savelist)}\n")
+
+    """with open("data/save.txt") as save:
+        print(f"Data write valid: {save.read() == "\n".join(savelist)}")"""
+    
+    with open("data/save.txt", "w") as save:
+        save.write("\n".join(sorted(savelist)))
 
 
 # example of writing text using character data:  
-def charlist_debug():  
-    for char in charlist:
-        print(f"Character ID {char.id}: {char.pronouns[2].title()} name is {char.name.title()}.")
+def charlist_debug(id=False):
+    """runs through code making sure all values in Character objects work as intended.
+
+    :param id: int or list - OPTIONAL: the id as an integer (or ids as a list of integers) to run the debug script on.
+    if not included, it will run the debug for every character in the character list.
+    """
+    workinglist = charlist
+    if type(id) in [int, list]:
+        if type(id) == int:
+            workinglist = [charlist[id]]
+        elif type(id) == list:
+            workinglist = []
+            for each in id:
+                workinglist.append(charlist[each])
+
+    for char in workinglist:
+        print(f"\nCharacter ID {char.id}: {char.pronouns[2].title()} name is {char.name.title()}.")
         print(f"{char.pronouns[0].title()} live{char.pronouns[len(char.pronouns) - 1]} in {char.town.title()} in the {char.region.title()} region.")
         print(f"{char.pronouns[0].title()} {char.pronouns[len(char.pronouns) - 2]} house number {char.address}")
         print(f"{char.pronouns[0].title()} can be pretty {char.personality()}, as {char.pronouns[2]} Nature is {char.nature}.")
@@ -191,31 +294,32 @@ def charlist_debug():
                 
         for key in char.contacts.keys():
             if char.contacts[key]:
+                #print(char.contacts[key])
                 for entry in char.contacts[key]:
                     #print(char.name)
                     #print(f"entry: {entry}")
                     match key:
                         case "knows":
-                            print(f"- {char.name.title()} knows {charlist[entry[0]].name.title()}.")
+                            print(f"- {char.name.title()} knows {entry[0].name.title()}.")
                         case "friends":
-                            print(f"- {char.name.title()} is friends with {charlist[entry[0]].name.title()}!")
+                            print(f"- {char.name.title()} is friends with {entry[0].name.title()}!")
                         case "bestfriends":
-                            print(f"- {char.name.title()} is total besties with {charlist[entry[0]].name.title()}!")
+                            print(f"- {char.name.title()} is total besties with {entry[0].name.title()}!")
                         case "dislikes":
-                            print(f"- {char.name.title()} doesn't think very highly of {charlist[entry[0]].name.title()}...")
+                            print(f"- {char.name.title()} doesn't think very highly of {entry[0].name.title()}...")
                         case "hates":
-                            print(f"- {char.name.title()} hates {charlist[entry[0]].name.title()}'s friggin guts!")
+                            print(f"- {char.name.title()} hates {entry[0].name.title()}'s friggin guts!")
                         case "into":
-                            print(f"- {char.name.title()} has a big fat crush on {charlist[entry[0]].name.title()}!")
+                            print(f"- {char.name.title()} has a big fat crush on {entry[0].name.title()}!")
                         case "romantic":
-                            print(f"- {char.name.title()} is in a romantic relationship with {charlist[entry[0]].name.title()}!")
+                            print(f"- {char.name.title()} is in a romantic relationship with {entry[0].name.title()}!")
                         case "serious":
-                            print(f"- {char.name.title()} is seriously romantic with {charlist[entry[0]].name.title()}!!")
+                            print(f"- {char.name.title()} is seriously romantic with {entry[0].name.title()}!!")
                         case "exromantic":
-                            print(f"- {char.name.title()} used to be romantic with {charlist[entry].name.title()}!")
+                            print(f"- {char.name.title()} used to be romantic with {entry.name.title()}!")
                         case "exserious":
-                            print(f"- {char.name.title()} used to be seriously romantic with {charlist[entry].name.title()}!!")
-        print("\n")
+                            print(f"- {char.name.title()} used to be seriously romantic with {entry.name.title()}!!")
+        print("\n------------------------------------------------------------")
 
 
 # add_attribute_to_pdex('"existingkey": "",\n', '\t\t"newkey": "",')

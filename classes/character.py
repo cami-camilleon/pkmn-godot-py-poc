@@ -1,10 +1,14 @@
-from data.data import regiontowns, natures, personalities
+# imported constants
+#imported data structures
+from data.data import charlist, regiontowns, natures, personalities
+#imported functions
+from data.data import rpgprint, multipleresponse, confirmedtextinput
 
 class Character:
     # ------------------------------------------------------------------------------------------------------------
     # INITIALIZER - INITIALIZER - INITIALIZER - INITIALIZER - INITIALIZER - INITIALIZER - INITIALIZER - INITIALIZE 
 
-    def __init__(self, id):
+    def __init__(self, id=-1):
         # constructor will fill in data for self from "characters.txt" **UNLESS THEY HAVE TO DO WITH OTHER 
         # CHARACTERS (chiefly the contacts dictionary)
 
@@ -80,65 +84,213 @@ class Character:
         }
 
         # begin read from file:
-        charfile = open("data/characters.txt")
-        charfile_list = charfile.read().split("\n")
+        save = open("data/save.txt")
+        savefile_list = save.read().split("\n")
+        playerexists = False
+        for each in savefile_list:
+            if each.startswith("0"):
+                playerexists = True
+
+        if id == -1 or (playerexists == False and id == 0):
+            # create a new character from user input
+            # this will be what runs when creating the player character
+            if id == 0:
+                self.id = 0
+            else:
+                self.id = len(charlist)
+            
+
+            self.name = confirmedtextinput(
+                True, 
+                "What is your name?", 
+                "???", 
+                r"Nice to meet you, \answer. Did I get that right?", 
+                ["Umm, yes?", "No, no, not quite...", "Uhh, who are you?"], 
+                "My mistake..."
+            )
+
+            self.nickname = confirmedtextinput(
+                True, 
+                "What do your friends call you? In other words, what is your nickname, would you say?", 
+                "???", 
+                "Gotcha... So you're the one I hear they call \\answer...\nI'm just kidding. I have never heard of you in my Life. Are you sure that was it?", 
+                ["Yes, that was it.", "No, that's not what I said...", "Seriously, who are you??"], 
+                "I must've misheard you..."
+            )
+
+            pronounresponse = multipleresponse(
+                "And might I ask: what pronouns do you mostly use?",
+                ["he/him", "she/her", "they/them", "it/its", "custom pronouns..."],
+                "???", 
+                ["Ah... I could've guessed that.", "What a relief...", "Ah, very good to know.", "I see. Thank you.", "Okay, let's make this easy. Here's a little card for you to fill out right quick.\nOops here's a pen as well..."]
+            )
+
+            match pronounresponse:
+                case "a":
+                    self.pronouns = ["he", "him", "his", "his", "is", "s"]
+                case "s":
+                    self.pronouns = ["she", "her", "her", "hers", "is", "s"]
+                case "d":
+                    self.pronouns = ["they", "them", "their", "theirs", "are", ""]
+                case "f":
+                    self.pronouns = ["it", "it", "its", "its", "is", "s"]
+                case "g":
+                    confirm = False
+                    while not confirm:
+                        rpgprint("\n\n[What Pronouns Do You Use?]")
+                        pronoun0 = confirmedtextinput(
+                            False, 
+                            '1. Fill in the blank in the third person: "_____ is/are really funny!" (Example: "She is really funny!")', 
+                            "", 
+                            'Does "\\Answer is/are really funny!" make the most sense?'
+                        )
+
+                        grammar0 = multipleresponse(
+                            "1a. Now circle the conjugation that makes the most sense with your pronoun:",
+                            [f'"{pronoun0.title()} IS really funny!"', f'"{pronoun0.title()} ARE really funny!"']
+                        )
+                        match grammar0:
+                            case "a":
+                                grammar0 = "is"
+                            case "s":
+                                grammar0 = "are"
+
+                        pronoun1 = confirmedtextinput(
+                            False, 
+                            '2. Fill in the blank in the third person: "This Pokémon totally loves _____." (Example: "This Pokémon totally loves it.")', 
+                            "", 
+                            'Does "This Pokémon totally loves \\answer." make the most sense?'
+                        )
+
+                        pronoun2 = confirmedtextinput(
+                            False, 
+                            '3. Fill in the blank in the third person: "_____ favorite Pokémon is Pikachu." (Example: "Their favorite Pokémon is Pikachu.")', 
+                            "", 
+                            'Does "\\Answer favorite Pokémon is Pikachu." make the most sense?'
+                        )
+
+                        pronoun3 = confirmedtextinput(
+                            False, 
+                            '3. Fill in the blank in the third person: "This Pokémon is _____." (Example: "This Pokémon is hers.")', 
+                            "", 
+                            'Does "This Pokémon is \\answer." make the most sense?'
+                        )
+
+                        grammar1 = multipleresponse(
+                            "4. Finally, circle the sentence that makes the most sense regarding plural verbs following your pronouns.",
+                            [f'"{pronoun0.title()} LIVES in a blue house."', f'"{pronoun0.title()} LIVE in a blue house."']
+                        )
+                        match grammar1:
+                            case "a":
+                                grammar1 = "s"
+                            case "s":
+                                grammar1 = ""
+
+                        confirmation = multipleresponse(
+                            f'Are you happy with your answers?\n\n"{pronoun0.title()} {grammar0} really funny!"\n"This Pokémon totally loves {pronoun1}!"\n"{pronoun2.title()} favorite Pokémon is Pikachu."\n"This Pokémon is {pronoun3}"',
+                            ["All done!", "Hold on..."],
+                            "",
+                            ["", "???: Not to worry, here is another card."]
+                        )
+
+                        if confirmation == "a":
+                            confirm = True
+                    
+                    self.pronouns = [pronoun0, pronoun1, pronoun2, pronoun3, grammar0, grammar1]
+
+            nick = ""
+            match pronoun0:
+                case "he":
+                    nick = "fella"
+                case "she":
+                    nick = "miss"
+                case _:
+                    nick = "my friend"
+
+            multipleresponse(
+                "Very helpful, thank you.", 
+                ["Will you finally tell me who you are??", "Okay, enough about me, weirdo; who are you??"], 
+                "???", 
+                [f"Don't worry about that, {nick}, for I have a few more questions!\nTry not to be alarmed by the mystery....", f"Up-bup-bup! I have only a few more questions, {nick}! Do not be alarmed by the mystery of my character...."]
+            )
+
+
+            self.age = 0
+            self.nature = natures[0]
+            self.region = [*regiontowns.keys()][0]
+            self.town = regiontowns[self.region][0]
+            self.address = 0
+        else:
+            character = ""
+            for item in savefile_list:
+                if item.startswith(str(id)):
+                    character = item
+                    break
+            # if character remains empty then raise error and do nothing 
+            if character == "":
+                raise Exception("tried to generate character from file with invalid id")
+            
+            # start making the character from the savefile data:
+            self.id = id
+
+            character = character.split(' ')
+
+            self.name = character[1]
+            self.nickname = character[2].replace(r"\_", " ")
+            self.pronouns = character[3].split(",")
+            # ^ FUCKING PRONOUNS!!! 
+            # "They are* funny!", "Go talk to them", "Their name is _", "That is theirs"
+            # masculine default:   he,  him,   his,    his
+            #  feminine default:  she,  her,   her,   hers
+            #   neutral default: they, them, their, theirs
+            # inanimate default:   it,   it,   its,    its (grammar changes if this is the case...)
+            # *NOTE: "is" changes to "are" when using gender neutral pronouns
+            # the usual case would look like this:
+            # "He is funny!", "She is sad", "It is hungry", "They are different!"
+            # ** special grammar: 
+            #   * the last entry in the list is either "s" or "": this value will get put after verbs that follow pronouns
+            #   example: She lives over there. (an "s" is put after "lives"); They live over here. ("" is put after "live")
+            #   * the second to last entry in the pronoun list is "are" or "is"
+            #   ^^^^ more code and rules will be added as more grammatical variances need to be implimented...
+            self.age = int(character[4])
+            self.nature = natures[int(character[5])]
+
+            self.region = [*regiontowns.keys()][int(character[6])]
+            self.town = regiontowns[self.region][int(character[7])]
+            self.address = int(character[8])
+            
+            # populate interests dictionary
+            # DEBUG NOTE: all categories are not yet indexed, once they are indexed and begin being populated with items,
+            # we will use the ID taken from the file as the id of the thing to be placed in the dictionary, rather than 
+            # putting the id in the dictionary itself 
+            for i, listnum in enumerate([9, 10, 11, 12, 13]):
+                for j, cluster in enumerate(character[listnum].split(".")):
+                    for interest in cluster.split(","):
+                        categorykey = [*self.interests.keys()][i]
+                        opinionkey = [*self.interests[categorykey].keys()][j]
+                        if interest:
+                            # again, this is only appending the id of the thingy to the dictionary values.
+                            # later, we will use the id to append an actual item object reference.
+                            self.interests[categorykey][opinionkey].extend([int(interest)])
+
+            save.close()
+
+
+        charlist.append(self)
+
+
+
+    def populate_contacts(self):
+        # here's a secondary constructor we need to run once the main charlist is populated 
+        # it takes the character data from the save file and uses the character ids found there to put 
+        # character instances in selfs contacts dictionary 
         
-        character = ""
-        for item in charfile_list:
-            if item.startswith(str(id)):
-                character = item
-                break
-        # if character remains empty then just dont do jack shit
-        if character == "":
-            return
-        
-        # start making the character:
-        self.id = id
+        save = open("data/save.txt")
+        savefile_list = save.read().split("\n")
 
-        character = character.split(' ')
-
-        self.name = character[1]
-        self.nickname = character[2].replace(r"\_", " ")
-        self.pronouns = character[3].split(",")
-        # ^ FUCKING PRONOUNS!!! 
-        # "They are* funny!", "Go talk to them", "Their name is _", "That is theirs"
-        # masculine default:   he,  him,   his,    his
-        #  feminine default:  she,  her,   her,   hers
-        #   neutral default: they, them, their, theirs
-        # inanimate default:   it,   it,   its,    its (grammar changes if this is the case...)
-        # *NOTE: "is" changes to "are" when using gender neutral pronouns
-        # the usual case would look like this:
-        # "He is funny!", "She is sad", "It is hungry", "They are different!"
-        # ** special grammar: 
-        #   * the last entry in the list is either "s" or "": this value will get put after verbs that follow pronouns
-        #   example: She lives over there. (an "s" is put after "lives"); They live over here. ("" is put after "live")
-        #   * the second to last entry in the pronoun list is "are" or "is"
-        #   ^^^^ more code and rules will be added as more grammatical variances need to be implimented...
-        self.age = int(character[4])
-        self.nature = natures[int(character[5])]
-
-        self.region = [*regiontowns.keys()][int(character[6])]
-        self.town = regiontowns[self.region][int(character[7])]
-        self.address = int(character[8])
-        
-        # populate interests dictionary
-        # DEBUG NOTE: all categories are not yet indexed, once they are indexed and begin being populated with items,
-        # we will use the ID taken from the file as the id of the thing to be placed in the dictionary, rather than 
-        # putting the id in the dictionary itself 
-        for i, listnum in enumerate([9, 10, 11, 12, 13]):
-            for j, cluster in enumerate(character[listnum].split(".")):
-                for interest in cluster.split(","):
-                    categorykey = [*self.interests.keys()][i]
-                    opinionkey = [*self.interests[categorykey].keys()][j]
-                    if interest:
-                        # again, this is only appending the id of the thingy to the dictionary values.
-                        # later, we will use the id to append an actual item object reference.
-                        self.interests[categorykey][opinionkey].extend([int(interest)])
-
-        # now populate contacts dictionary
         # we will be putting tuples containing (Character.id, friendscore) and then when the contact needs to be 
         # referenced we will use the integer id to lookup the character in the table 
-        for char in charfile_list:
+        for char in savefile_list:
             if int(char[0]) == self.id:
                 contacts = char.split(' ')[14]
                 for i, category in enumerate(contacts.split(".")):
@@ -146,11 +298,10 @@ class Character:
                         if entry:
                             if [*self.contacts.keys()][i] in ["exromantic", "exserious"]:
                                 # if parsing data into exromantic or exserious, only append the id- no need for friendship value
-                                self.contacts[[*self.contacts.keys()][i]].append(int(entry.split("-")[0]))
+                                self.contacts[[*self.contacts.keys()][i]].append(charlist[int(entry.split("-")[0])])
                             else:
-                                self.contacts[[*self.contacts.keys()][i]].append((int(entry.split("-")[0]), int(entry.split("-")[1])))
+                                self.contacts[[*self.contacts.keys()][i]].append((charlist[int(entry.split("-")[0])], int(entry.split("-")[1])))
 
-        charfile.close()
 
 
     # ------------------------------------------------------------------------------------------------------------
@@ -159,7 +310,7 @@ class Character:
     def update_relationship(self, character, update):
         """Update the relationship value for a character.
 
-        :param character: npc/player class instance - its a Character instance (can be either npc or player, as this 
+        :param character: npc/player class id - id of a character in charlist (can be either npc or player, as this 
         only deals with attributes inherited from parent Character class)
         :param update: int - integer to update the relationship value with
         :return: str - either "nochange" if the relationship status didnt change after the update, or str containing 
@@ -224,7 +375,6 @@ class Character:
                                 self.contacts["hates"].append((character, 5))
                                 return "hates"
                             elif update != -26:
-                                print(update)
                                 # i dont like you...
                                 self.contacts[key].remove(contact)
                                 self.contacts["dislikes"].append((character, 5))
@@ -361,4 +511,3 @@ class Character:
                 repair.append(word)
             
         return " ".join(repair)
-

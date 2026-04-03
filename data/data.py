@@ -1,4 +1,77 @@
+# imported modules
+import time
+
 # imported classes
+
+# some constants idk i figure this is the best place to put them...
+ASDF_RESPONSE = ["a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'"]
+TEXT_SPEED = 0.05
+
+# some important functions
+def rpgprint(string, speaker="", speedmult=1):
+	if speaker != "":
+		newlinecount = 0
+		while string.startswith("\n"):
+			string = string[1:]
+			newlinecount += 1
+		for i in range(newlinecount):
+			speaker = f"\n{speaker}"
+		thestring = f"{speaker}: {string}"
+	else:
+		thestring = string
+	for char in thestring:
+		print(char, end="", flush=True)
+		time.sleep(TEXT_SPEED * speedmult)
+
+
+def multipleresponse(question, choices, speaker="", responses=[]):
+	validresponses = []
+	for i in range(len(choices)):
+		validresponses.append(ASDF_RESPONSE[i])
+
+	rpgprint(f"\n\n{question}", speaker)
+	print("")
+	for i, choice in enumerate(choices):
+		print(f"{validresponses[i]}: {choices[i]}")
+		time.sleep(TEXT_SPEED)
+
+	userresponse = ""
+	while userresponse.lower() not in validresponses:
+		userresponse = input("> ")
+
+	try:
+		responses[validresponses.index(userresponse)]
+	except:
+		pass
+	else:
+		if responses[validresponses.index(userresponse)] != "":
+			rpgprint(responses[validresponses.index(userresponse)], speaker)
+
+	print("", end="", flush=True)
+	return userresponse.lower()
+
+
+def confirmedtextinput(casesensitive, question, speaker="", areyousure="", confirmchoices=["Yes", "No"], mybad=""):
+	confirm = False
+	while not confirm:
+		rpgprint(f"\n\n{question}\n", speaker)
+		userinput = input("> ")
+		if casesensitive == False:
+			print(f"this ran; {userinput} turns into {userinput.lower()}")
+			userinput = userinput.lower()
+		# do multipleresponse, manually account for yes or no responses
+		formatting = f"{userinput.join(areyousure.split(r"\answer"))}"
+		formatting = f"{userinput.title().join(formatting.split(r"\Answer"))}"
+		formatting = f"{userinput.upper().join(formatting.split(r"\ANSWER"))}"
+		response = multipleresponse(formatting, confirmchoices, speaker)
+		if response == 's':
+			if mybad != "":
+				rpgprint(f"\n{mybad}", speaker)
+		else:
+			confirm = True
+
+
+	return userinput
 
 # ----------------------------------------------------------------------------------------------------------------
 # CHARACTER LIST - CHARACTER LIST - CHARACTER LIST - CHARACTER LIST - CHARACTER LIST - CHARACTER LIST - CHARACTER   
