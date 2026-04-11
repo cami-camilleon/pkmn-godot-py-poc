@@ -1,0 +1,87 @@
+"adamant" - 5
+"bashful" - 5
+"bold" - 6
+"brave" - 4
+"calm" - 5
+"careful" - 3
+"docile" - 5
+"gentle" - 5
+"hardy" - 5
+"hasty" - 11
+"impish" - 9
+"jolly" - 5
+"lax" - 4
+"lonely" - 5
+"mild" - 6
+"modest" - 5
+"naive" - 5
+"naughty" - 7
+"quiet" - 4
+"quirky" - 4
+"rash" - 12
+"relaxed" - 6
+"sassy" - 10
+"serious" - 9
+"timid" - 5
+
+[ ] relaxed
+[ ] naive
+[ ] lonely
+[ ] quirky
+[ ] quirky
+[ ] bold
+[ ] adamant
+[ ] bashful
+[ ] hardy
+[ ] brave
+[ ] brave
+[-] gentle
+[ ] modest
+[ ] careful
+[ ] careful
+[ ] docile
+[ ] timid
+[ ] lax
+[ ] quiet
+[ ] quiet
+[ ] calm
+[ ] jolly
+[-] careful
+[ ] lax
+
+naughty -> jolly
+
+bold -> lonely
+
+relaxed -> lax
+
+rash - 12 - reduce by 5 | -1 to relaxed, -1 to naive, -1 to lonely, -2 to quirky, -1 to bold, total -6 (stable)
+hasty - 11 - reduce by 5 | -1 to adamant, -1 to bashful, -1 to hardy, -2 to brave, total -5 (stable)
+sassy - 10 - reduce by 4 | -1 to gentle, -1 to modest, -2 to careful, total -4 (stable)
+impish - 9 - reduce by 3 | -1 to docile, -1 to timid, -1 to lax, total -3 (stable)
+serious - 9 - reduce by 3 | -2 to quiet, -1 to calm, total -3 (stable)
+naughty - 7 - reduce by 1 | -1 to jolly, total -1 (stable)
+---------------------------------------------------------------------
+bold - 6 | +1 from rash, -1 to careful, total unchanged
+mild - 6 | 
+relaxed - 6 | -1 to lax, +1 from rash, total unchanged
+---------------------------------------------------------------------
+adamant - 5 - increase by 1 | +1 from hasty, total +1 (stable)
+bashful - 5 - increase by 1 | +1 from hasty, total +1 (stable)
+calm - 5 - increase by 1 | +1 from serious, total +1 (stable)
+docile - 5 - increase by 1 | +1 from impish, total +1 (stable)
+gentle - 5 - increase by 1 | +1 from sassy, total +1 (stable)
+hardy - 5 - increase by 1 | +1 from hasty, total +1 (stable)
+jolly - 5 - increase by 1 | +1 from naughty, total +1 (stable)
+lonely - 5 - increase by 1 | +1 from rash, total +1 (stable)
+modest - 5 - increase by 1 | +1 from sassy, total +1 (stable)
+naive - 5 - increase by 1 | +1 from rash, total +1 (stable)
+timid - 5 - increase by 1 | +1 from impish, total +1 (stable)
+brave - 4 - increase by 2 | +2 from hasty, total +2 (stable)
+lax - 4 - increase by 2 | +1 from relaxed, +1 from impish, total +2 (stable)
+quiet - 4 - increase by 2 | +2 from serious, total +2 (stable)
+quirky - 4 - increase by 2 | +2 to quirky, total +2 (stable)
+careful - 3 - increase by 3| +2 from sassy, +1 from bold, total +3 (stable)
+
+-22 +22
+

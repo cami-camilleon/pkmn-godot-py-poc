@@ -1,14 +1,40 @@
+# this file will have important functions and structured data needed for for game behavior
+
 # imported modules
-import time
+import time, subprocess, shutil
 
 # imported classes
 
 # some constants idk i figure this is the best place to put them...
 ASDF_RESPONSE = ["a", "s", "d", "f", "g", "h", "j", "k", "l", ";", "'"]
-TEXT_SPEED = 0.05
+TEXT_SPEED = 3
 
 # some important functions
-def rpgprint(string, speaker="", speedmult=1):
+def pressenter():
+	rpgprint("Press ENTER to continue.")
+	input()
+
+def clear():
+	subprocess.run("clear||cls", shell=True)
+
+def capital(string):
+    return f"{string[:1].upper()}{string[1:]}"
+
+def sequence_number(number):
+	match str(number)[-1]:
+            case "1":
+                return f"{number}st"
+            case "2":
+                return f"{number}nd"
+            case "2":
+                return f"{number}rd"
+            case _:
+                return f"{number}th"
+		
+
+def rpgprint(string, speaker="", speedmult=1, chunk=9999):
+	#print("terminal size:", shutil.get_terminal_size()[0])
+	nlsuffix = ""
 	if speaker != "":
 		newlinecount = 0
 		while string.startswith("\n"):
@@ -16,12 +42,74 @@ def rpgprint(string, speaker="", speedmult=1):
 			newlinecount += 1
 		for i in range(newlinecount):
 			speaker = f"\n{speaker}"
-		thestring = f"{speaker}: {string}"
-	else:
-		thestring = string
-	for char in thestring:
-		print(char, end="", flush=True)
-		time.sleep(TEXT_SPEED * speedmult)
+
+		thestring = " "
+		for i in range(len(speaker) + 2):
+			thestring += "_"
+		thestring += f"\n| {speaker} |____________________ _ _  _\n| "
+		print(thestring)
+
+		nlsuffix = "| "
+
+	stringsplit = string.split(" ")
+	templine = []
+	tempstring = []
+	for i, word in enumerate(stringsplit):
+		if "\n" in word:
+			tempsplit = word.split("\n")
+			for j, each in enumerate(tempsplit):
+				match j:
+					case 0:
+						word = f"{each}\n"
+					case _:
+						stringsplit.insert(i + 1, each)
+
+		if word != "":
+			templine.append(word)
+
+		if len(" ".join(templine)) >= shutil.get_terminal_size()[0] - 2:
+			templine.pop()
+			tempstring.append(" ".join(templine))
+			templine = [word]
+
+		try:
+			templine[-2]
+		except:
+			pass
+		else:
+			if "\n" in templine[-2]:
+				templine.pop()
+				tempstring.append(" ".join(templine).strip("\n"))
+				templine = [word]
+
+			
+	if templine:
+		tempstring.append(" ".join(templine))
+	for i, each in enumerate(tempstring):
+		tempstring[i] = "\n".join(tempstring[i].split("\n "))
+	string = "\n".join(tempstring)
+
+	stringsplit = string.split("\n")
+	newstringlist = []
+	for i, each in enumerate(stringsplit):
+		each = f"{nlsuffix}{each}"
+		newstringlist.append(each)
+	string = "\n".join(newstringlist)
+
+		
+	thestring = f"{string}\n"
+
+	
+	chunkstring = ""
+	for i, char in enumerate(thestring):
+		chunkstring += char
+		if i % chunk == 0 or i == len(thestring) - 1:
+			print(chunkstring, end="", flush=True)
+			chunkstring = ""
+		time.sleep(TEXT_SPEED / speedmult / chunk / 100)
+
+	if speaker != "":
+		print("|____________________ _ _  _\n")
 
 
 def multipleresponse(question, choices, speaker="", responses=[]):
@@ -29,11 +117,12 @@ def multipleresponse(question, choices, speaker="", responses=[]):
 	for i in range(len(choices)):
 		validresponses.append(ASDF_RESPONSE[i])
 
-	rpgprint(f"\n\n{question}", speaker)
+	rpgprint(question, speaker)
 	print("")
+
 	for i, choice in enumerate(choices):
-		print(f"{validresponses[i]}: {choices[i]}")
-		time.sleep(TEXT_SPEED)
+		print(f"{validresponses[i]}: {choice}")
+		time.sleep(TEXT_SPEED / 10)
 
 	userresponse = ""
 	while userresponse.lower() not in validresponses:
@@ -54,10 +143,9 @@ def multipleresponse(question, choices, speaker="", responses=[]):
 def confirmedtextinput(casesensitive, question, speaker="", areyousure="", confirmchoices=["Yes", "No"], mybad=""):
 	confirm = False
 	while not confirm:
-		rpgprint(f"\n\n{question}\n", speaker)
+		rpgprint(question, speaker)
 		userinput = input("> ")
 		if casesensitive == False:
-			print(f"this ran; {userinput} turns into {userinput.lower()}")
 			userinput = userinput.lower()
 		# do multipleresponse, manually account for yes or no responses
 		formatting = f"{userinput.join(areyousure.split(r"\answer"))}"
@@ -65,11 +153,20 @@ def confirmedtextinput(casesensitive, question, speaker="", areyousure="", confi
 		formatting = f"{userinput.upper().join(formatting.split(r"\ANSWER"))}"
 		response = multipleresponse(formatting, confirmchoices, speaker)
 		if response == 's':
+			clear()
 			if mybad != "":
-				rpgprint(f"\n{mybad}", speaker)
+				rpgprint(f"{mybad}", speaker)
 		else:
 			confirm = True
 
+
+	return userinput
+
+def textinput(casesensitive, question, speaker=""):
+	rpgprint(question, speaker)
+	userinput = input("> ")
+	if casesensitive == False:
+		userinput = userinput.lower()
 
 	return userinput
 

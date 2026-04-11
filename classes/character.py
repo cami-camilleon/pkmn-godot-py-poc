@@ -2,7 +2,7 @@
 #imported data structures
 from data.data import charlist, regiontowns, natures, personalities
 #imported functions
-from data.data import rpgprint, multipleresponse, confirmedtextinput
+from data.data import sequence_number, rpgprint, multipleresponse, confirmedtextinput
 
 class Character:
     # ------------------------------------------------------------------------------------------------------------
@@ -82,144 +82,16 @@ class Character:
             # contacts dict so REMEMBER TO SKIP THOSE TWO KEYS WHEN PARSING THROUGH CONTACTS!!!! 
             # examples of this necessary key-skipping are in update_relationship and audit_contact 
         }
-
+        
         # begin read from file:
         save = open("data/save.txt")
         savefile_list = save.read().split("\n")
-        playerexists = False
-        for each in savefile_list:
-            if each.startswith("0"):
-                playerexists = True
 
-        if id == -1 or (playerexists == False and id == 0):
-            # create a new character from user input
-            # this will be what runs when creating the player character
-            if id == 0:
-                self.id = 0
-            else:
-                self.id = len(charlist)
+        if id == -1:
+            # make a new character through guided questions (DEBUG PROCESS)
+            self.id = len(charlist)
+            newnpclist = [] # change this once gtheres a function that makes a character
             
-
-            self.name = confirmedtextinput(
-                True, 
-                "What is your name?", 
-                "???", 
-                r"Nice to meet you, \answer. Did I get that right?", 
-                ["Umm, yes?", "No, no, not quite...", "Uhh, who are you?"], 
-                "My mistake..."
-            )
-
-            self.nickname = confirmedtextinput(
-                True, 
-                "What do your friends call you? In other words, what is your nickname, would you say?", 
-                "???", 
-                "Gotcha... So you're the one I hear they call \\answer...\nI'm just kidding. I have never heard of you in my Life. Are you sure that was it?", 
-                ["Yes, that was it.", "No, that's not what I said...", "Seriously, who are you??"], 
-                "I must've misheard you..."
-            )
-
-            pronounresponse = multipleresponse(
-                "And might I ask: what pronouns do you mostly use?",
-                ["he/him", "she/her", "they/them", "it/its", "custom pronouns..."],
-                "???", 
-                ["Ah... I could've guessed that.", "What a relief...", "Ah, very good to know.", "I see. Thank you.", "Okay, let's make this easy. Here's a little card for you to fill out right quick.\nOops here's a pen as well..."]
-            )
-
-            match pronounresponse:
-                case "a":
-                    self.pronouns = ["he", "him", "his", "his", "is", "s"]
-                case "s":
-                    self.pronouns = ["she", "her", "her", "hers", "is", "s"]
-                case "d":
-                    self.pronouns = ["they", "them", "their", "theirs", "are", ""]
-                case "f":
-                    self.pronouns = ["it", "it", "its", "its", "is", "s"]
-                case "g":
-                    confirm = False
-                    while not confirm:
-                        rpgprint("\n\n[What Pronouns Do You Use?]")
-                        pronoun0 = confirmedtextinput(
-                            False, 
-                            '1. Fill in the blank in the third person: "_____ is/are really funny!" (Example: "She is really funny!")', 
-                            "", 
-                            'Does "\\Answer is/are really funny!" make the most sense?'
-                        )
-
-                        grammar0 = multipleresponse(
-                            "1a. Now circle the conjugation that makes the most sense with your pronoun:",
-                            [f'"{pronoun0.title()} IS really funny!"', f'"{pronoun0.title()} ARE really funny!"']
-                        )
-                        match grammar0:
-                            case "a":
-                                grammar0 = "is"
-                            case "s":
-                                grammar0 = "are"
-
-                        pronoun1 = confirmedtextinput(
-                            False, 
-                            '2. Fill in the blank in the third person: "This Pokémon totally loves _____." (Example: "This Pokémon totally loves it.")', 
-                            "", 
-                            'Does "This Pokémon totally loves \\answer." make the most sense?'
-                        )
-
-                        pronoun2 = confirmedtextinput(
-                            False, 
-                            '3. Fill in the blank in the third person: "_____ favorite Pokémon is Pikachu." (Example: "Their favorite Pokémon is Pikachu.")', 
-                            "", 
-                            'Does "\\Answer favorite Pokémon is Pikachu." make the most sense?'
-                        )
-
-                        pronoun3 = confirmedtextinput(
-                            False, 
-                            '3. Fill in the blank in the third person: "This Pokémon is _____." (Example: "This Pokémon is hers.")', 
-                            "", 
-                            'Does "This Pokémon is \\answer." make the most sense?'
-                        )
-
-                        grammar1 = multipleresponse(
-                            "4. Finally, circle the sentence that makes the most sense regarding plural verbs following your pronouns.",
-                            [f'"{pronoun0.title()} LIVES in a blue house."', f'"{pronoun0.title()} LIVE in a blue house."']
-                        )
-                        match grammar1:
-                            case "a":
-                                grammar1 = "s"
-                            case "s":
-                                grammar1 = ""
-
-                        confirmation = multipleresponse(
-                            f'Are you happy with your answers?\n\n"{pronoun0.title()} {grammar0} really funny!"\n"This Pokémon totally loves {pronoun1}!"\n"{pronoun2.title()} favorite Pokémon is Pikachu."\n"This Pokémon is {pronoun3}"',
-                            ["All done!", "Hold on..."],
-                            "",
-                            ["", "???: Not to worry, here is another card."]
-                        )
-
-                        if confirmation == "a":
-                            confirm = True
-                    
-                    self.pronouns = [pronoun0, pronoun1, pronoun2, pronoun3, grammar0, grammar1]
-
-            nick = ""
-            match pronoun0:
-                case "he":
-                    nick = "fella"
-                case "she":
-                    nick = "miss"
-                case _:
-                    nick = "my friend"
-
-            multipleresponse(
-                "Very helpful, thank you.", 
-                ["Will you finally tell me who you are??", "Okay, enough about me, weirdo; who are you??"], 
-                "???", 
-                [f"Don't worry about that, {nick}, for I have a few more questions!\nTry not to be alarmed by the mystery....", f"Up-bup-bup! I have only a few more questions, {nick}! Do not be alarmed by the mystery of my character...."]
-            )
-
-
-            self.age = 0
-            self.nature = natures[0]
-            self.region = [*regiontowns.keys()][0]
-            self.town = regiontowns[self.region][0]
-            self.address = 0
         else:
             character = ""
             for item in savefile_list:
@@ -250,9 +122,11 @@ class Character:
             # ** special grammar: 
             #   * the last entry in the list is either "s" or "": this value will get put after verbs that follow pronouns
             #   example: She lives over there. (an "s" is put after "lives"); They live over here. ("" is put after "live")
-            #   * the second to last entry in the pronoun list is "are" or "is"
-            #   ^^^^ more code and rules will be added as more grammatical variances need to be implimented...
-            self.age = int(character[4])
+
+            self.bday = []
+            for item in character[4].split(","):
+                self.bday.append(int(item))
+            
             self.nature = natures[int(character[5])]
 
             self.region = [*regiontowns.keys()][int(character[6])]
@@ -511,3 +385,14 @@ class Character:
                 repair.append(word)
             
         return " ".join(repair)
+    
+    def birthday(self):
+        return f"{[
+            "January", "February", "March", 
+            "April", "May", "June", 
+            "July", "August", "September", 
+            "October", "November", "December"
+        ][self.bday[0] - 1]} {sequence_number(self.bday[1])}"
+
+        
+
